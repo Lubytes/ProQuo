@@ -1,6 +1,8 @@
+/* Based off of https://codepen.io/drehimself/pen/QNXpyp/ */
 .card {
   background: white;
   width: 250px;
+  height: 20em;
   display: inline-block;
   margin: auto;
   border-radius: 19px;
@@ -8,10 +10,32 @@
   text-align: center;
   box-shadow: -1px 15px 30px -12px #6B36A0;
   z-index: 9999;
+  margin:1.5em;
+  overflow:hidden;
 }
 
-img { 
-   border:3px solid #6B36A0;
-    border-radius:19px;
-   width:250px;
+.card img { 
+  background-size: cover;
+  height: 66%;
+  border:3px solid #6B36A0;
+  border-radius:19px;
+  transition: all .2s ease;
+}
+
+.card:hover img { 
+  height: 33%;
+  
+}
+
+.card .content{
+  min-height: 66% - 5em;
+}
+
+.card .cardmore{
+  color:white;
+  font-size: 2em;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  height: 5em;
+  background-color: #635BB8;
 }
