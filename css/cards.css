@@ -1,19 +1,18 @@
 /* Based off of https://codepen.io/drehimself/pen/QNXpyp/ */
 .card {
   background: white;
-  width: 250px;
+  width: 20em;
   height: 20em;
   display: inline-block;
-  margin: auto;
   border-radius: 19px;
   position: relative;
   text-align: center;
   box-shadow: -1px 15px 30px -12px #6B36A0;
-  z-index: 9999;
   margin:1.5em;
   overflow:hidden;
 }
-.card img{
+
+.card img {
   width: 100%;
   display: block;
   transition: all .2s ease;
