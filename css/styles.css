@@ -1,0 +1,58 @@
+.info {
+	position: absolute;
+	border-style: solid;
+	border-width: 5px;
+	border-radius: 8px;
+}
+
+#profile {
+	float:left;
+	width:100px;
+	height:100px;
+}
+
+#button {
+	float: right;
+}
+
+#term {
+	float: right;
+}
+
+#footer {
+	float: left;
+}
+
+#nav {
+	float: left;
+	display: block;
+	padding: 8px;
+}
+
+#icon {
+	float: right;
+	display: block;
+	padding: 8px;
+}
+
+h5{
+	clear:both;
+}
+nav {
+	background-color: #6B36A0;
+	height: 45px;
+}
+
+footer {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding: 1rem;
+	background-color: #7DA3CC;
+}
+
+body {
+	column-count: 1;
+	background-color: #635BB8;
+}
