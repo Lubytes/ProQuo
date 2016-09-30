@@ -1,0 +1,36 @@
+.cards{
+	padding-top: 3em;
+	width: 100%;
+	justify-content: center;
+}
+
+.card {
+    box-shadow: 0 0.25em 0.5em 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 40%;
+	margin: 1.2em;
+}
+
+.card:hover {
+    box-shadow: 0 0.5em 1em 0 rgba(0,0,0,0.2);
+}
+
+.container {
+    padding: 0.125em 1em;
+}
+
+.footer {
+	clear: both;
+	padding-top: 3em;
+}
+
+/* Source: http://bootsnipp.com/snippets/featured/flat-user-profile-ui */
+
+
+
+.profile 
+{
+    min-height: 355px;
+    display: inline-block;
+    }
+
