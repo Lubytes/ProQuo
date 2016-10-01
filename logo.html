@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+	  <meta name="icons" content="http://glyphicons.com/">
+    <title>ProQuo - Home</title>
+    
+    <!-- Bootstrap core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/cards.css" rel="stylesheet">
+    <style>
+    .logo{
+      font-family: 'Cinzel', serif;
+      font-size:90pt;
+      position:absolute;
+    }
+    
+    #logo1{
+      color: #635BB8;
+      z-index: 2;
+    }
+    #logo2{
+      color: #6B36A0;
+      margin: 0.25em 0 0 1.05em;
+      z-index: 1;
+    }
+    
+    #arrow{
+      color:black;
+      /*chrome,safari*/ -webkit-clip-path: polygon(65px 120px,229px 120px,229px 170px,311px 107px,229px 45px,229px 95px,65px 95px);
+
+      /*Firefox*/
+      clip-path: url("#arrow");
+    }
+    
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div id="logo1" class="logo">pro</div>
+      <div id="logo2" class="logo">quo</div>
+    </div> <!-- /container -->
+  </body>
+</html>
