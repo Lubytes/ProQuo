@@ -18,7 +18,7 @@
   transition: all .2s ease;
 }
 
-.card:hover img{
+.card:hover img, .cardActive img{
   margin-top:-25%;
 }
 
@@ -31,20 +31,41 @@
   transition: all .2s ease;
 }
 
-.card:hover .cardimage { 
-  height: 33%;
-  
+.card:hover .cardimage, .cardActive .cardimage { 
+  height: 33%;  
 }
 
-.card .content{
+.card .content {
   min-height: 66% - 5em;
 }
 
-.card .cardmore{
+.card .cardmore {
   color:white;
   font-size: 2em;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
   height: 5em;
   background-color: #635BB8;
+}
+
+.cardActive {
+  background: #635BB8;
+  color:white;
+}
+
+.dataBoxClosed {
+  transition: all .2s ease;
+  height:0em;
+}
+
+.dataBox {
+  background: #635BB8;
+  color:white;
+  padding: auto;
+  font-size:5em;
+  text-align:center;
+  height: 5em;
+  border-radius: 10px;
+  display: inline-block;
+  position: relative;
 }

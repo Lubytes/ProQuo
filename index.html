@@ -9,13 +9,22 @@
     <meta name="author" content="">
 	  <meta name="icons" content="http://glyphicons.com/">
     <title>ProQuo - Home</title>
-    
     <!-- Bootstrap core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/cards.css" rel="stylesheet">
   </head>
 
   <body>
+    
+    <!-- 
+      This page prototypes the main page for our site.
+      
+      Items will be searchable, and appere as cards, whcih can be clicked on for more information.
+      
+      The searchable aspect of this page, and the details and layout of said details are not part of this page and are very simple dummes in this case.
+      
+      This page can use a lot of imporvments, as the html is very wordy on the class side.  I am sure this could be improved with some work and some additions to the javascript and css.
+    -->
     <div class="container">
       <div class="header clearfix">
         <nav>
@@ -23,7 +32,7 @@
             <li role="presentation" class="active"><a href="#">Profile</a></li>
           </ul>
         </nav>
-        <h3 class="text-muted">Project name</h3>
+        <h3 class="text-muted">ProQuo</h3>
       </div>
 
       
@@ -31,11 +40,9 @@
 			<span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
 			<input type="text" class="form-control" placeholder="What are you looking for?" aria-describedby="sizing-addon1">
 		</div>
-     
-
       <div class="row marketing">
         <div class="col-lg-3 col-md-4 col-sm-6">
-          <div class="card">
+          <div class="card" data-posId="1">
             <div class="cardimage">
               <img src="img/sampleImage1.jpg">
             </div>
@@ -47,9 +54,9 @@
             <div class="cardmore">Click For Details</div>
           </div>
         </div>
-          <div class="det-xs-1"></div>
+          <div class="det-xs-1 dataBoxClosed"></div>
         <div class="col-lg-3 col-md-4 col-sm-6">
-          <div class="card">
+          <div class="card" data-posId="2">
             <div class="cardimage">
               <img src="img/sampleImage1.jpg">
             </div>
@@ -61,9 +68,9 @@
             <div class="cardmore">Click For Details</div>
           </div>
         </div>
-          <div class="det-sm-1 det-xs-2"></div>
+          <div class="det-sm-1 det-xs-2 dataBoxClosed"></div>
         <div class="col-lg-3 col-md-4 col-sm-6">
-          <div class="card">
+          <div class="card" data-posId="3">
             <div class="cardimage">
               <img src="img/sampleImage1.jpg">
             </div>
@@ -75,9 +82,9 @@
             <div class="cardmore">Click For Details</div>
           </div>
         </div>
-          <div class="det-md-1 det-xs-3"></div>
+          <div class="det-md-1 det-xs-3 dataBoxClosed"></div>
         <div class="col-lg-3 col-md-4 col-sm-6">
-          <div class="card">
+          <div class="card" data-posId="4">
             <div class="cardimage">
               <img src="img/sampleImage1.jpg">
             </div>
@@ -89,9 +96,9 @@
             <div class="cardmore">Click For Details</div>
           </div>
         </div>
-          <div class="det-lg-1 det-sm-2 det-xs-4"></div>
+          <div class="det-lg-1 det-sm-2 det-xs-4 dataBoxClosed"></div>
         <div class="col-lg-3 col-md-4 col-sm-6">
-          <div class="card">
+          <div class="card" data-posId="5">
             <div class="cardimage">
               <img src="img/sampleImage1.jpg">
             </div>
@@ -103,9 +110,9 @@
             <div class="cardmore">Click For Details</div>
           </div>
         </div>
-          <div class="det-xs-5"></div>
+          <div class="det-xs-5 dataBoxClosed"></div>
         <div class="col-lg-3 col-md-4 col-sm-6">
-          <div class="card">
+          <div class="card" data-posId="6">
             <div class="cardimage">
               <img src="img/sampleImage1.jpg">
             </div>
@@ -117,9 +124,9 @@
             <div class="cardmore">Click For Details</div>
           </div>
         </div>
-          <div class="det-md-2 det-sm-3 det-xs-6"></div>
+          <div class="det-md-2 det-sm-3 det-xs-6 dataBoxClosed"></div>
         <div class="col-lg-3 col-md-4 col-sm-6">
-          <div class="card">
+          <div class="card" data-posId="7">
             <div class="cardimage">
               <img src="img/sampleImage1.jpg">
             </div>
@@ -131,9 +138,9 @@
             <div class="cardmore">Click For Details</div>
           </div>
         </div>
-          <div class="det-xs-7"></div>
+          <div class="det-xs-7 dataBoxClosed"></div>
         <div class="col-lg-3 col-md-4 col-sm-6">
-          <div class="card">
+          <div class="card" data-posId="8">
             <div class="cardimage">
               <img src="img/sampleImage1.jpg">
             </div>
@@ -145,7 +152,7 @@
             <div class="cardmore">Click For Details</div>
           </div>
         </div>
-          <div class="det-xs-8 det-sm-4 det-md-3 det-lg-2">
+          <div class="det-xs-8 det-sm-4 det-md-3 det-lg-2 dataBoxClosed">
       </div>
 
       <footer class="footer">
@@ -153,6 +160,15 @@
       </footer>
 
     </div> <!-- /container -->
+
+    <!-- Sripts -->
+    <!-- jQuery advised for bootstrap toolkit -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!-- Responsive toolkit for bootstrap to detect what width state I am in, because I don't know js much -->
+    <!-- Advised from here http://stackoverflow.com/questions/18575582/how-to-detect-responsive-breakpoints-of-twitter-bootstrap-3-using-javascript -->
+    <!-- And JS modified from the code pen here http://codepen.io/dih/pen/ivECj -->
+    <script src="https://rawgit.com/maciej-gurban/responsive-bootstrap-toolkit/master/dist/bootstrap-toolkit.min.js"></script>
+    <script src=js/indexMagic.js></script>
 
   </body>
 </html>
