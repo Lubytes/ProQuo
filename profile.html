@@ -1,41 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" type="text/css" href="css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <meta name="Author" content="Roc Wang">
-    <title>Profile</title>
-  </head>
-  <body>
-    <nav>
-      <div id="nav">
-        <a href="index.html">Home</a>
-        <a href="summary.html">Summary</a>
-      </div>
-      <div id="icon">
-        <a href="profile.html"><img src="#" alt="picon"></a>
-        <a href="noti"><img src="#" alt="noticon"></a>
-      </div> 
-    </nav>
-    <div class="info">
-      <img src="images/icon.png" alt="picon" id="profile">
-      <h5>Name</h5>
-      <input type="text" name="name">
-      <h5>Sex</h5>
-      <input type="text" name="sex">
-      <h5>Phone</h5>
-      <input type="text" name="phone">
-      <h5>Address</h5>
-      <input type="text" name="address">
-    </div>
-    <button id="button">Save</button>
-    <footer>
-      <p id="footer">&copy;ProQuo<br>2016<br></p>
-      <a href="Terms_of_Use.index" id="term">Terms of Use</a>
-    </footer>
-  </body>
+    <head>
+        
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+        <meta name="Author" content="Roc Wang">
+        <title>Profile</title>
+    </head>
+    <body>
+        <div class="input-group input-group-lg">
+            <span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
+            <input type="text" class="form-control" placeholder="What are you looking for?" aria-describedby="sizing-addon1">
+        </div>
+        <img src="images/logo.png" alt="logo" id="logo">
+        <nav>
+            <div id="nav">
+                <a href="index.html">Home</a>
+                <a href="summary.html">Summary</a>
+            </div>
+            <div id="icon">
+                <a href=""><img src="images/noti.png" alt="noticon" style="width:20px; height:20px;"></a>
+                <a href="profile.html"><img src="images/icon.png" alt="picon" style="width:20px; height:20px;"></a>
+            </div>
+        </nav>
+        <div class="info">
+            <img src="images/icon.png" alt="picon" id="profile">
+            <div class="form">
+                <h5>Name</h5>
+                <input type="text" name="name">
+                <h5>Sex</h5>
+                <input type="text" name="sex">
+                <h5>Phone</h5>
+                <input type="text" name="phone">
+                <h5>Address</h5>
+                <input type="text" name="address">
+            </div>
+        </div>
+        <button id="button">Save</button>
+        <footer>
+            <p id="footer">&copy;ProQuo<br>2016<br></p>
+            <a href="Terms_of_Use.html" id="term">Terms of Use</a>
+        </footer>
+    </body>
 </html>
