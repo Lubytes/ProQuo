@@ -1,8 +1,5 @@
 #terms {
-	padding-left: 30px;
-	padding-top: 20px;
-	padding-right: 30px;
-	padding-bottom: 20px
+	padding: 30px 20px 30px 20px;
 }
 
 #logo {
@@ -21,11 +18,8 @@
 #profile {
 	float: left;
 	width: 100px;
-	height: 100px
-}
-
-#button {
-	float: right
+	height: 100px;
+	padding: 10px 10px 10px 10px;
 }
 
 #footer {
@@ -35,13 +29,13 @@
 #nav {
 	float: left;
 	display: block;
-	padding: 0px 10px;
+	padding: 10px 10px;
 }
 
 #icon {
 	float: right;
 	display: block;
-	padding: 0px 10px;
+	padding: 10px 10px;
 }
 
 .info {
@@ -54,7 +48,8 @@
 
 .form {
 	display: inline-block;
-	clear: both
+	clear: both;
+	padding: 10px 10px 10px 10px;
 }
 
 nav {
@@ -71,26 +66,18 @@ footer {
 	background-color: #7DA3CC
 }
 
-@media (max-width:768px) {
-	#logo {
-		width: 70px;
-		height: 80px;
-	}
-
-}
-
 @media (max-width:736px) {
 	#logo {
-		width: 70px;
-		height: 80px;
+		width: 10%;
+		height: 10.869565%;
 	}
 
 }
 
 @media (max-width:414px) {
 	#logo {
-		width: 35px;
-		height: 45px;
+		width: 8.454106%;
+		height: 10.869565%;
 		margin-left: 40%;
 	}
 
