@@ -16,16 +16,6 @@
   </head>
 
   <body>
-    
-    <!-- 
-      This page prototypes the main page for our site.
-      
-      Items will be searchable, and appere as cards, whcih can be clicked on for more information.
-      
-      The searchable aspect of this page, and the details and layout of said details are not part of this page and are very simple dummes in this case.
-      
-      This page can use a lot of imporvments, as the html is very wordy on the class side.  I am sure this could be improved with some work and some additions to the javascript and css.
-    -->
     <div class="container">
       <div class="header clearfix">
         <nav>
@@ -33,19 +23,61 @@
             <li role="presentation" class="active"><a href="profile.html">Profile</a></li>
           </ul>
         </nav>
-        <h3 class="text-muted">ProQuo</h3>
+        <a href="."><h3 class="text-muted">ProQuo</h3></a>
       </div>
-      <div class="col-sm-12 title">
-        <img src="http://placehold.it/300x150" class="img-responsive">
-        <h1 >Witty slogen about trading items</h1>
+      <div class="col-md-4 col-sm-12" id="profile">
+        <h1>My Profile</h1>
+        <h2>Protius	Quon</h2> <!-- I did not spend that long coming up with a placeholder name... -->
+        <h3>Products Up Trade: 8</h3>
+        <h3>Pending Trade Offers: </h3>
+        <ul>
+          <a href="#"><li>My laptop for Alice's Segway</li></a>
+          <a href="#"><li>My laptop for Bob's Lightbulb touched by god</li></a>
+          <a href="#"><li>My laptop for The Zoo's Panda</li></a>
+          <a href="#"><li>My laptop for Mr. Dent's Bable fish</li></a>
+          <a href="#"><li>My laptop for Zelda's pencil and paper</li></a>
+          <a href="#"><li>My laptop for Eve's Comic Book Collection</li></a>
+        </ul>
       </div>
-      
-  		<div class="input-group input-group-lg">
-			<span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
-			<input type="text" class="form-control" placeholder="What are you looking for?" aria-describedby="sizing-addon1">
-		</div>
-      <div class="row marketing">
-        <div class="col-lg-3 col-md-4 col-sm-6">
+      <!-- I will say here, that I would like to modify the js to work on this new layout, but... I just don't have the time, but expect some boxes like on the home page to open with the same details view (TBD) to display here in an editable form. -->
+      <div class="row marketing col-md-8">
+        <div class="title">
+          <h1>Offered Items</h1>
+        </div>
+        
+        <div class="col-sm-6">
+          <div class="card" data-posId="1">
+            <div class="cardimage">
+              <img src="img/sampleImage1.jpg">
+            </div>
+            <div class="content">
+              <h4>Alice's Segway</h4>
+              <h5>For your laptop</h5>
+              <p>Maecenas sed diam eget risus varius...</p>
+              <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+            </div>
+            <div class="cardmore">See Full Trade Offer</div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card" data-posId="1">
+            <div class="cardimage">
+              <img src="img/sampleImage1.jpg">
+            </div>
+            <div class="content">
+              <h4>Bob's Lightbulb touched by god</h4>
+              <h5>For your laptop</h5>
+              <p>Maecenas sed diam eget risus varius...</p>
+              <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+            </div>
+            <div class="cardmore">See Full Trade Offer</div>
+          </div>
+        </div>
+        
+        <div class="title">
+          <h1>My Inventory</h1>
+        </div>
+        <div class="col-sm-6">
           <div class="card" data-posId="1">
             <div class="cardimage">
               <img src="img/sampleImage1.jpg">
@@ -55,11 +87,10 @@
               <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
               <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
             </div>
-            <div class="cardmore">Click For Details</div>
+            <div class="cardmore">Change Info</div>
           </div>
         </div>
-          <div class="det-xs-1 dataBoxClosed"></div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-sm-6">
           <div class="card" data-posId="2">
             <div class="cardimage">
               <img src="img/sampleImage1.jpg">
@@ -69,11 +100,10 @@
               <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
               <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
             </div>
-            <div class="cardmore">Click For Details</div>
+            <div class="cardmore">Change Info</div>
           </div>
         </div>
-          <div class="det-sm-1 det-xs-2 dataBoxClosed"></div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-sm-6">
           <div class="card" data-posId="3">
             <div class="cardimage">
               <img src="img/sampleImage1.jpg">
@@ -83,11 +113,10 @@
               <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
               <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
             </div>
-            <div class="cardmore">Click For Details</div>
+            <div class="cardmore">Change Info</div>
           </div>
         </div>
-          <div class="det-md-1 det-xs-3 dataBoxClosed"></div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-sm-6">
           <div class="card" data-posId="4">
             <div class="cardimage">
               <img src="img/sampleImage1.jpg">
@@ -97,11 +126,10 @@
               <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
               <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
             </div>
-            <div class="cardmore">Click For Details</div>
+            <div class="cardmore">Change Info</div>
           </div>
         </div>
-          <div class="det-lg-1 det-sm-2 det-xs-4 dataBoxClosed"></div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-sm-6">
           <div class="card" data-posId="5">
             <div class="cardimage">
               <img src="img/sampleImage1.jpg">
@@ -111,11 +139,10 @@
               <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
               <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
             </div>
-            <div class="cardmore">Click For Details</div>
+            <div class="cardmore">Change Info</div>
           </div>
         </div>
-          <div class="det-xs-5 dataBoxClosed"></div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-sm-6">
           <div class="card" data-posId="6">
             <div class="cardimage">
               <img src="img/sampleImage1.jpg">
@@ -125,11 +152,10 @@
               <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
               <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
             </div>
-            <div class="cardmore">Click For Details</div>
+            <div class="cardmore">Change Info</div>
           </div>
         </div>
-          <div class="det-md-2 det-sm-3 det-xs-6 dataBoxClosed"></div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-sm-6">
           <div class="card" data-posId="7">
             <div class="cardimage">
               <img src="img/sampleImage1.jpg">
@@ -139,11 +165,10 @@
               <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
               <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
             </div>
-            <div class="cardmore">Click For Details</div>
+            <div class="cardmore">Change Info</div>
           </div>
         </div>
-          <div class="det-xs-7 dataBoxClosed"></div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-sm-6">
           <div class="card" data-posId="8">
             <div class="cardimage">
               <img src="img/sampleImage1.jpg">
@@ -153,10 +178,9 @@
               <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
               <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
             </div>
-            <div class="cardmore">Click For Details</div>
+            <div class="cardmore">Change Info</div>
           </div>
         </div>
-          <div class="det-xs-8 det-sm-4 det-md-3 det-lg-2 dataBoxClosed">
       </div>
 
       <footer class="footer">
@@ -164,15 +188,6 @@
       </footer>
 
     </div> <!-- /container -->
-
-    <!-- Sripts -->
-    <!-- jQuery advised for bootstrap toolkit -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <!-- Responsive toolkit for bootstrap to detect what width state I am in, because I don't know js much -->
-    <!-- Advised from here http://stackoverflow.com/questions/18575582/how-to-detect-responsive-breakpoints-of-twitter-bootstrap-3-using-javascript -->
-    <!-- And JS modified from the code pen here http://codepen.io/dih/pen/ivECj -->
-    <script src="https://rawgit.com/maciej-gurban/responsive-bootstrap-toolkit/master/dist/bootstrap-toolkit.min.js"></script>
-    <script src=js/indexMagic.js></script>
-
+    <!-- No more javascript for this page, I just don't have it in me to do it for this page. -->
   </body>
 </html>
