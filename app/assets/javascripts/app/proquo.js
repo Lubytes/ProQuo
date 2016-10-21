@@ -1,4 +1,4 @@
-var app = angular.module('proquo', []);
+var app = angular.module('proquo', ['ngMaterial']);
 
 app.controller('MainCtrl', ['$scope',
     function($scope){

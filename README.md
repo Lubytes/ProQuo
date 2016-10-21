@@ -15,7 +15,7 @@ A bartering web application where users can post items available for trade.
 * Extract the dev kit (run it)
 * Open cmd and cd to where the dev kit was installed
 * Run "ruby dk.rb init" then "ruby dk.rb install"
-* Run "install bundle"
+* Run "gem install bundler"
 
 * Navigate (cd) to the ProQuo folder
 * Run "bundle install"
