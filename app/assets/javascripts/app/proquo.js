@@ -1,7 +1,8 @@
-var app = angular.module('proquo', ['ngSanitize', 'ngMaterial']);
+var app = angular.module('proquo', []);
 
-app.controller('MainController', ['$scope', function($scope) {
-    $scope.title = 'ProQuo';
-    $scope.promo = 'The most viewed trades this month.';
+app.controller('MainCtrl', ['$scope',
+    function($scope){
+        $scope.title = "ProQuo";
+        $scope.promo = "The most viewed trades this month.";
 
-}]);
+    }]);
