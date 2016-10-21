@@ -27,6 +27,16 @@ A bartering web application where users can post items available for trade.
 * Locally installed in the repo (no work)
 * Want work? Read this: [AngularJS Tutorial with Rails](https://thinkster.io/angular-rails)
 
+## When updating
+### When the database changes
+* run "rails db:migrate"
+* if something goes wrong and it still wont work
+  * run "rails db:rest"
+  * then try "rails db:migrate" again.
+
+### When the addons change (Gemfile related errors)
+* run "bundle install"
+
 ## Features
 
 * Coming soon!
