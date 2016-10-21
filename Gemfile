@@ -23,6 +23,8 @@ gem 'jbuilder', '~> 2.5'
 
 # Use angularJS
 gem 'angularjs-rails'
+gem 'rails-angular-material'
+
 
 
 group :development, :test do
