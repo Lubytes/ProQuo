@@ -17,7 +17,7 @@ A bartering web application where users can post items available for trade.
 * Run "ruby dk.rb init" then "ruby dk.rb install"
 * Run "install bundle"
 
-* Navigate (cd) to he ProQuo folder
+* Navigate (cd) to the ProQuo folder
 * Run "bundle install"
 
 * To launch the project, run "rails server"
