@@ -52,6 +52,11 @@
 	padding: 10px 10px 10px 10px;
 }
 
+.row_marketing{
+	padding-left: 10px;
+	padding-bottom: 10px;
+}
+
 nav {
 	background-color: #6B36A0;
 	height: 45px
