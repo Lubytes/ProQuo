@@ -4,10 +4,20 @@ class UserController < ApplicationController
     @user = User.find_by_username(params[:username])
   end
 
+  def new
+    @user = User.new
+  end
+
   def create
     @user = User.new(params[:user])
+    @user.username = params[:username]
     @user.password = params[:password]
-    @user.save!
+    @user.password_confirmation = params[:password_confirmation]
+    if @user.save
+      render "emailSent"
+    else
+      render "new"
+    end
   end
 
   def login
