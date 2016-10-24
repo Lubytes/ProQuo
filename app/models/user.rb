@@ -2,8 +2,6 @@ require 'bcrypt'
 
 class User < ApplicationRecord
 
-  attr_accessor :username
-
   validates_presence_of :username, presence: true
   validates_presence_of :password_hash, presence: true
 
