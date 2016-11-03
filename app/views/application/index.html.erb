@@ -8,6 +8,35 @@
                 </li>
                 <li role="presentation"><a href="#">Contact</a>
                 </li>
+                <li role="presentation">
+                    <!--Account button-->
+
+                    <div class="md-menu-demo" ng-controller="LoginCtrl as ctrl" ng-cloak>
+
+                        <md-menu>
+                          <a href="#"><!--href based on nav nav-pills-->
+                              <md-button class="md-icon-button" ng-click="ctrl.openMenu($mdOpenMenu, $event)">
+                            <span class="glyphicon glyphicon-user"></span>
+                          </md-button>
+                          </a><!--end of href-->
+                          <md-menu-content width="4">
+                            <md-menu-item>
+                              <md-button ng-click="ctrl.login($event)">
+                                <span class="glyphicon glyphicon-tree-deciduous" ></span>
+                                Login
+                              </md-button>
+                            </md-menu-item>
+                            <md-menu-item>
+                              <md-button ng-click="ctrl.signup()">
+                                <span class="glyphicon glyphicon-grain" ></span>
+                                Sign Up
+                              </md-button>
+                            </md-menu-item>
+                          </md-menu-content>
+                        </md-menu>
+                    </div>
+                    <!--end of account button-->
+                </li>
             </ul>
         </nav>
         <h3 class="text-muted">{{title}}</h3>
@@ -19,7 +48,7 @@
         <input type="text" class="form-control" placeholder="What are you looking for?" aria-describedby="sizing-addon1">
     </div>
 
-
+    <!--In the future we may use cards instead https://material.angularjs.org/latest/demo/card-->
     <div ng-controller="MainCtrl as mainCtrl" ng-cloak="" class="gridListdemoBasicUsage" ng-app="proquo">
         <md-grid-list md-cols-xs="1" md-cols-sm="2" md-cols-md="4" md-cols-gt-md="6" md-row-height-gt-md="1:1" md-row-height="2:2" md-gutter="12px" md-gutter-gt-sm="8px">
 
