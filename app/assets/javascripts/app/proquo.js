@@ -1,5 +1,6 @@
 var app = angular.module('proquo', ['ngMaterial']);
 
+//General and basic controller. Currently only holds scope variables
 app.controller('MainCtrl', ['$scope',
     function($scope){
         $scope.title = "ProQuo";
@@ -7,6 +8,7 @@ app.controller('MainCtrl', ['$scope',
 
     }]);
 
+//login and sign up controller. Creates dialogues and redirects depending on which button the user clicks
 app.controller('LoginCtrl', function DemoCtrl($mdDialog) {
         var originatorEv;
 
@@ -20,6 +22,7 @@ app.controller('LoginCtrl', function DemoCtrl($mdDialog) {
           this.notificationsEnabled = !this.notificationsEnabled;
         };
 
+        //if the user wants to login
         this.login = function() {
           $mdDialog.show(
             $mdDialog.alert()
@@ -34,6 +37,7 @@ app.controller('LoginCtrl', function DemoCtrl($mdDialog) {
           originatorEv = null;
         };
 
+        //if the user decides to create an account
         this.signup = function() {
             $mdDialog.show(
               $mdDialog.alert()
