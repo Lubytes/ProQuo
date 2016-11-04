@@ -12,6 +12,11 @@
   </head>
 
   <body ng-app="proquo" ng-controller="MainCtrl">
+    <% if logged_in? %>
+      <!-- This will be displayed if a user is logged in.  Use this as a template for what to do somewhere-->
+      <div><%= current_user.username %></div>
+      <%= link_to "Log out", logout_path %>
+    <% end %>
   <%= yield %>
   </body>
 </html>

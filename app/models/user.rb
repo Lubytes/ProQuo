@@ -2,6 +2,9 @@ require 'bcrypt'
 
 class User < ApplicationRecord
 
+  # If a user gets destroyed, delete all props owned by them.
+  has_many :props, dependent: :destroy
+
   validates_presence_of :username, presence: true
   validates_presence_of :password_hash, presence: true
   validates_uniqueness_of :username

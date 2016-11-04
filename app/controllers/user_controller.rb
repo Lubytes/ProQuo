@@ -1,13 +1,19 @@
 class UserController < ApplicationController
 
+  # User profile.
+  # TODO get list of props owned by user ready.
   def show
     @user = User.find_by_username(params[:username])
   end
 
+  # Register page
   def new
     @user = User.new
   end
 
+  # Register post that will actually create the user.
+  # TODO actualy send email.
+  # TODO make intermidiary step for user to not be active until email.
   def create
     @user = User.new(params[:user])
     @user.username = params[:username]
@@ -17,15 +23,6 @@ class UserController < ApplicationController
       render "emailSent"
     else
       render "new"
-    end
-  end
-
-  def login
-    @user = User.find_by_username(params[:username])
-    if @user.password == params[:password]
-      # TODO what happens at LOGIN
-    else
-      # TODO what happens if FAIL TO LOGIN
     end
   end
 end
