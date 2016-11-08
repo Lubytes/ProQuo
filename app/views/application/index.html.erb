@@ -1,3 +1,38 @@
+<!-- Modal content -->
+<div ng-controller="LoginCtrl as ctrl" id="myModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span ng-click="ctrl.close()" class="close">×</span>
+        <h2>Login</h2>
+      </div>
+      <div class="modal-body">
+
+        <form role="form" method="post">
+            <!--username input-->
+            <md-input-container class="md-icon-float md-block">
+              <label>Username</label>
+              <md-icon class="name"><span class="glyphicon glyphicon-user"></span></md-icon>
+              <input ng-model="user.name" type="text" ng-required="true">
+            </md-input-container>
+
+            <!--password input-->
+            <md-input-container class="md-block">
+              <label>Password</label>
+              <md-icon class="password"><span class="glyphicon glyphicon-lock"></span></md-icon>
+              <input ng-model="user.password" type="password" ng-required="true">
+            </md-input-container>
+
+            <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-send"></span> Submit</button>
+        </form>
+
+
+      </div>
+      <div class="modal-footer">
+
+      </div>
+    </div>
+</div>
+<!--end modal content-->
 <div class="container">
     <div class="header clearfix">
         <nav>
@@ -11,18 +46,17 @@
                 </li>
                 <li role="presentation">
                     <!--Account button-->
-
                     <div class="md-menu-demo" ng-controller="LoginCtrl as ctrl" ng-cloak>
 
                         <md-menu>
                           <a href="#"><!--href based on nav nav-pills-->
-                              <md-button class="md-icon-button" ng-click="ctrl.openMenu($mdOpenMenu, $event)">
+                              <md-button aria-label="account button" class="md-icon-button" ng-click="ctrl.openMenu($mdOpenMenu, $event)">
                             <span class="glyphicon glyphicon-user"></span>
                           </md-button>
                           </a><!--end of href-->
                           <md-menu-content width="4">
                             <md-menu-item>
-                              <md-button ng-click="ctrl.login($event)">
+                              <md-button ng-click="ctrl.login()">
                                 <span class="glyphicon glyphicon-tree-deciduous" ></span>
                                 Login
                               </md-button>
@@ -42,6 +76,9 @@
         </nav>
         <h3 class="text-muted">{{title}}</h3>
     </div>
+
+
+
 
     <!--Search bar at the top of the page-->
     <div class="input-group input-group-lg" id="search-bar">
@@ -99,3 +136,13 @@
     </footer>
 
 </div>
+
+<script>
+    //fix to close the login modal when clicking outside the box. Move over to Angular asap
+    var modal = document.getElementById('myModal');
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
