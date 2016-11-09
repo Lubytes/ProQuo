@@ -16,6 +16,7 @@ footer{
 
 
 /*MODAL STYLES*/
+/*Retrived from but edited at http://www.w3schools.com/howto/howto_css_modals.asp*/
     /* The Modal (background) */
     .modal {
         display: none; /* Hidden by default */
@@ -57,7 +58,7 @@ footer{
 
     /* Modal Header */
     .modal-header {
-    
+
         background-color: #5cb85c;
         color: white;
         text-align: center;
