@@ -30,6 +30,7 @@ A bartering web application where users can post items available for trade.
 ## When updating
 ### When the database changes
 * run "rails db:migrate"
+* run "rails db:seed"
 * if something goes wrong and it still wont work
   * run "rails db:rest"
   * then try "rails db:migrate" again.
@@ -39,4 +40,4 @@ A bartering web application where users can post items available for trade.
 
 ## Features
 
-* Coming soon!
+* Sign in / Create an account
