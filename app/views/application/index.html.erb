@@ -1,47 +1,12 @@
+
+
+
 <div class="container">
-    <div class="header clearfix">
-        <nav>
-            <!--Navigation pills at the top right of the page-->
-            <ul class="nav nav-pills pull-right">
-                <li role="presentation" class="active"><a href="#">Home</a>
-                </li>
-                <li role="presentation"><a href="#">About</a>
-                </li>
-                <li role="presentation"><a href="#">Contact</a>
-                </li>
-                <li role="presentation">
-                    <!--Account button-->
 
-                    <div class="md-menu-demo" ng-controller="LoginCtrl as ctrl" ng-cloak>
+    <!--Import header content-->
+    <%= render 'header' %>
 
-                        <md-menu>
-                          <a href="#"><!--href based on nav nav-pills-->
-                              <md-button class="md-icon-button" ng-click="ctrl.openMenu($mdOpenMenu, $event)">
-                            <span class="glyphicon glyphicon-user"></span>
-                          </md-button>
-                          </a><!--end of href-->
-                          <md-menu-content width="4">
-                            <md-menu-item>
-                              <md-button ng-click="ctrl.login($event)">
-                                <span class="glyphicon glyphicon-tree-deciduous" ></span>
-                                Login
-                              </md-button>
-                            </md-menu-item>
-                            <md-menu-item>
-                              <md-button ng-click="ctrl.signup()">
-                                <span class="glyphicon glyphicon-grain" ></span>
-                                Sign Up
-                              </md-button>
-                            </md-menu-item>
-                          </md-menu-content>
-                        </md-menu>
-                    </div>
-                    <!--end of account button-->
-                </li>
-            </ul>
-        </nav>
-        <h3 class="text-muted">{{title}}</h3>
-    </div>
+
 
     <!--Search bar at the top of the page-->
     <div class="input-group input-group-lg" id="search-bar">
@@ -92,10 +57,18 @@
         </md-grid-list>
     </div>
 
-    <!--Footer of the page. This should be moved into another file-->
-    <footer class="footer">
-        <hr>
-        <p>&copy; 2016 ProQuo, Inc.</p>
-    </footer>
+    <!--Import footer content-->
+    <%= render 'footer' %>
+
 
 </div>
+
+<script>
+    //fix to close the login modal when clicking outside the box. Move over to Angular asap
+    var modal = document.getElementById('myModal');
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>

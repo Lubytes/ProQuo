@@ -9,46 +9,29 @@ app.controller('MainCtrl', ['$scope',
     }]);
 
 //login and sign up controller. Creates dialogues and redirects depending on which button the user clicks
-app.controller('LoginCtrl', function DemoCtrl($mdDialog) {
-        var originatorEv;
+app.controller('LoginCtrl', ['$scope',
+    function DemoCtrl($scope, $mdDialog) {
+        if ($scope.hideLogin === undefined){
+            $scope.hideLogin = "true";
+            $scope.c = "hello";
 
+        }
         this.openMenu = function($mdOpenMenu, ev) {
-          originatorEv = ev;
           $mdOpenMenu(ev);
         };
 
-        this.notificationsEnabled = true;
-        this.toggleNotifications = function() {
-          this.notificationsEnabled = !this.notificationsEnabled;
+        //closing any dialogue box (for now only closes one specfic). Use a function variable in the future
+        this.close = function() {
+            document.getElementById("myModal").style.display = "none";
         };
 
         //if the user wants to login
         this.login = function() {
-          $mdDialog.show(
-            $mdDialog.alert()
-              .targetEvent(originatorEv)
-              .clickOutsideToClose(true)
-              .parent('body')
-              .title('Login Below:')
-              .textContent('Future form goes here.')
-              .ok('Login')
-          );
-
-          originatorEv = null;
+            document.getElementById("myModal").style.display = "block";
         };
 
         //if the user decides to create an account
         this.signup = function() {
-            $mdDialog.show(
-              $mdDialog.alert()
-                .targetEvent(originatorEv)
-                .clickOutsideToClose(true)
-                .parent('body')
-                .title('Redirect')
-                .textContent('This will redirect to a sign up page')
-                .ok('buttons and stuff')
-            );
 
-            originatorEv = null;
         };
-      });
+    }]);
