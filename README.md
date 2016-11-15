@@ -44,7 +44,11 @@ A bartering web application where users can post items available for trade.
 ## Features
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 * Coming soon!
+>>>>>>> master
+=======
+* Sign in / Create an account
 >>>>>>> master
 =======
 * Sign in / Create an account
