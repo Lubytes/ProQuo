@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @prop.name %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @prop.user.username %>
+</p>
+
+<%= link_to 'Edit', edit_prop_path(@prop) %> |
+<%= link_to 'Back', props_path %>

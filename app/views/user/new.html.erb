@@ -1,0 +1,20 @@
+<h1>Register</h1>
+
+<% if @user.errors.full_messages.any? %>
+  <% @user.errors.full_messages.each do |error_message| %>
+    <div class="alert alert-danger"><%= error_message %></div> <br />
+  <% end %>
+<% end %>
+
+<%= form_tag controller: "user", action: "create", method: "post", class: "form-group" do %>
+  <%= label_tag :username %>
+  <%= text_field_tag :username %>
+  <br>
+  <%= label_tag :password %>
+  <%= password_field_tag :password %>
+  <br>
+  <%= label_tag :password_confirmation %>
+  <%= password_field_tag :password_confirmation %>
+  <br>
+  <%= submit_tag "Register" %>
+<% end %>

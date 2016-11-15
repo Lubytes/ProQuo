@@ -1,0 +1,89 @@
+#terms {
+	padding: 30px 20px 30px 20px;
+}
+
+#logo {
+	width: 100px;
+	height: 120px
+}
+
+#button {
+	float: right
+}
+
+#term {
+	float: right
+}
+
+#profile {
+	float: left;
+	width: 100px;
+	height: 100px;
+	padding: 10px 10px 10px 10px;
+}
+
+#footer {
+	float: left
+}
+
+#nav {
+	float: left;
+	display: block;
+	padding: 10px 10px;
+}
+
+#icon {
+	float: right;
+	display: block;
+	padding: 10px 10px;
+}
+
+.info {
+	max-width: 100%;
+	border-style: solid;
+	border-width: 3px;
+	border-radius: 3px;
+	background-color: #635BB8;
+}
+
+.form {
+	display: inline-block;
+	clear: both;
+	padding: 10px 10px 10px 10px;
+}
+
+.row_marketing{
+	padding-left: 10px;
+	padding-bottom: 10px;
+}
+
+nav {
+	background-color: #6B36A0;
+	height: 45px
+}
+
+footer {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding: 1rem;
+	background-color: #7DA3CC
+}
+
+@media (max-width:736px) {
+	#logo {
+		width: 10%;
+		height: 10.869565%;
+	}
+
+}
+
+@media (max-width:414px) {
+	#logo {
+		width: 8.454106%;
+		height: 10.869565%;
+		margin-left: 40%;
+	}
+
+}
