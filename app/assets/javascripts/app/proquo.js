@@ -13,7 +13,6 @@ app.controller('LoginCtrl', ['$scope',
     function DemoCtrl($scope, $mdDialog) {
         if ($scope.hideLogin === undefined){
             $scope.hideLogin = "true";
-            $scope.c = "hello";
 
         }
         this.openMenu = function($mdOpenMenu, ev) {
@@ -21,17 +20,17 @@ app.controller('LoginCtrl', ['$scope',
         };
 
         //closing any dialogue box (for now only closes one specfic). Use a function variable in the future
-        this.close = function() {
-            document.getElementById("myModal").style.display = "none";
+        this.close = function(id) {
+            document.getElementById(id).style.display = "none";
         };
 
         //if the user wants to login
-        this.login = function() {
-            document.getElementById("myModal").style.display = "block";
+        this.login = function(id) {
+            document.getElementById(id).style.display = "block";
         };
 
         //if the user decides to create an account
-        this.signup = function() {
-
+        this.signup = function(id) {
+            document.getElementById(id).style.display = "block";
         };
     }]);

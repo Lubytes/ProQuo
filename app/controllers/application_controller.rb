@@ -5,5 +5,6 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
 
   def index
+      @user = User.new
   end
 end

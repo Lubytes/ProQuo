@@ -21,9 +21,9 @@ class UserController < ApplicationController
     @user.password_confirmation = params[:password_confirmation]
     if @user.save
 
-      render root, notice: 'Account was created.'
+      redirect_to :back, notice: 'Account was created.'
     else
-      render root
+      redirect_to :back
     end
   end
 end
