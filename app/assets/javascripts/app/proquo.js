@@ -47,27 +47,22 @@ app.controller('aboutCtrl', ['$scope',
         $scope.para = "Lorem ipsum dolor sit amet, consectetur adipisicing elit.";
         $scope.authors = [{
             name : 'John Smith',
-            job : 'Job Title',
             pic : 'http://placehold.it/200x200',
             todo : 'What does this team member to? Keep it short! This is also a great spot for social links!'
         }, {
             name : 'John Smith',
-            job : 'Job Title',
             pic : 'http://placehold.it/200x200',
             todo : 'What does this team member to? Keep it short! This is also a great spot for social links!'
         },{
             name : 'John Smith',
-            job : 'Job Title',
             pic : 'http://placehold.it/200x200',
             todo : 'What does this team member to? Keep it short! This is also a great spot for social links!'
         },{
             name : 'John Smith',
-            job : 'Job Title',
             pic : 'http://placehold.it/200x200',
             todo : 'What does this team member to? Keep it short! This is also a great spot for social links!'
         },{
             name : 'John Smith',
-            job : 'Job Title',
             pic : 'http://placehold.it/200x200',
             todo : 'What does this team member to? Keep it short! This is also a great spot for social links!'
         }];
