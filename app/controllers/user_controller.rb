@@ -23,7 +23,7 @@ class UserController < ApplicationController
 
       render root, notice: 'Account was created.'
     else
-      render "new"
+      render root
     end
   end
 end
