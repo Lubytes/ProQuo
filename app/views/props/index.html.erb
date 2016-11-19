@@ -15,7 +15,7 @@
     <% @props.each do |prop| %>
       <tr>
         <td><%= prop.name %></td>
-        <td><%= prop.owner %></td>
+        <td><%= prop.user.username %></td>
         <td><%= link_to 'Show', prop %></td>
         <td><%= link_to 'Edit', edit_prop_path(prop) %></td>
         <td><%= link_to 'Destroy', prop, method: :delete, data: { confirm: 'Are you sure?' } %></td>

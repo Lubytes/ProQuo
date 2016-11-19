@@ -20,7 +20,8 @@ class UserController < ApplicationController
     @user.password = params[:password]
     @user.password_confirmation = params[:password_confirmation]
     if @user.save
-      render "emailSent"
+
+      render root, notice: 'Account was created.'
     else
       render "new"
     end

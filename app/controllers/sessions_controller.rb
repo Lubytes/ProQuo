@@ -19,7 +19,6 @@ class SessionsController < ApplicationController
   end
 
   # When this is called, log out the user.
-  # TODO fix this to be a post, right now is get.
   def destroy
     log_out
     redirect_to root_url
