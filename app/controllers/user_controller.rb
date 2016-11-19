@@ -1,5 +1,7 @@
 class UserController < ApplicationController
 
+  include ApplicationHelper
+
   # User profile.
   # TODO get list of props owned by user ready.
   def show
@@ -20,9 +22,13 @@ class UserController < ApplicationController
     @user.password = params[:password]
     @user.password_confirmation = params[:password_confirmation]
     if @user.save
-
-      redirect_to :back, notice: 'Account was created.'
+        redirect_to :back, notice: 'Account was created.'
     else
+      if @user.errors.full_messages.any?
+        @user.errors.full_messages.each do |error_message|
+          addToErrors(:registerError, error_message)
+        end
+      end
       redirect_to :back
     end
   end

@@ -1,9 +1,7 @@
 <h1>Register</h1>
 
-<% if @user.errors.full_messages.any? %>
-  <% @user.errors.full_messages.each do |error_message| %>
-    <div class="alert alert-danger"><%= error_message %></div> <br />
-  <% end %>
+<% getErrors(:registerError).each do |error_message| %>
+  <div class="alert alert-danger"><%= error_message %></div> <br />
 <% end %>
 
 <%= form_tag controller: "user", action: "create", method: "post", class: "form-group" do %>
