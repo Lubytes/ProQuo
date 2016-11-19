@@ -3,11 +3,11 @@
     <!--Import header content-->
     <%= render 'header' %>
 
-
-
     <!--Search bar at the top of the page-->
     <div class="input-group input-group-lg" id="search-bar">
-        <span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
+        <span class="input-group-addon" id="sizing-addon1">
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+        </span>
         <input type="text" class="form-control" placeholder="What are you looking for?" aria-describedby="sizing-addon1">
     </div>
 
@@ -57,13 +57,12 @@
     <!--Import footer content-->
     <%= render 'footer' %>
 
-
 </div>
 
 <script>
     //fix to close the login modal when clicking outside the box. Move over to Angular asap
     var modal = document.getElementById('myModal');
-    window.onclick = function(event) {
+    window.onclick = function (event) {
         if (event.target == modal) {
             modal.style.display = "none";
         }

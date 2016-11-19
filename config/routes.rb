@@ -10,6 +10,6 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   get    '/logout',  to: 'sessions#destroy'
   get    '/about',   to: 'application#about'
-
+  
   root to: 'application#index'
 end
