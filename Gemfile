@@ -29,6 +29,7 @@ gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 # Use angularJS
 gem 'angularjs-rails'
 gem 'rails-angular-material'
+gem 'paperclip'
 
 
 
