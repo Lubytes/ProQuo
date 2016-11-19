@@ -18,11 +18,13 @@
             </div>
 
             <div ng-controller="aboutCtrl" class="col-lg-4 col-sm-6 text-center" ng-app="proquo" ng-repeat="author in authors">
-                <img class="img-circle img-responsive img-center" ng-src={{author.pic}} alt="">
-                <h3>{{author.name}}
-                    <small>{{author.job}}</small>
-                </h3>
-                <p>{{author.todo}}</p>
+                <div>
+                    <img class="img-circle img-responsive img-center" ng-src={{author.pic}} alt="">
+                    <h3>{{author.name}}
+                        <small>{{author.job}}</small>
+                    </h3>
+                    <p>{{author.todo}}</p>
+                </div>
             </div>
         </div>
     </div>
