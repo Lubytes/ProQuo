@@ -27,6 +27,7 @@ class PropsController < ApplicationController
   def create
     @prop = Prop.new
     @prop.name = prop_params[:name]
+    @prop.description = prop_params[:description]
     @prop.user = current_user
 
     respond_to do |format|
@@ -72,6 +73,6 @@ class PropsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def prop_params
-      params.require(:prop).permit(:name, :owner)
+      params.require(:prop).permit(:name, :description)
     end
 end
