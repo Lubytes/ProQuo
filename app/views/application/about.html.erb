@@ -1,0 +1,32 @@
+<div class="container">
+
+    <!-- Introduction Row -->
+    <div ng-controller="aboutCtrl" ng-app="proquo">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">{{ header }}
+                    <small>It's Nice to Meet You!</small>
+                </h1>
+                <p>{{ para }}</p>
+            </div>
+        </div>
+
+        <!-- Team Members Row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">Our Team</h2>
+            </div>
+
+            <div ng-controller="aboutCtrl" class="col-lg-4 col-sm-6 text-center" ng-app="proquo" ng-repeat="author in authors">
+                <img class="img-circle img-responsive img-center" ng-src={{author.pic}} alt="">
+                <h3>{{author.name}}
+                    <small>{{author.job}}</small>
+                </h3>
+                <p>{{author.todo}}</p>
+            </div>
+        </div>
+    </div>
+    <hr>
+
+</div>
+<!-- /.container -->

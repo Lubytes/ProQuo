@@ -120,9 +120,9 @@
             <nav>
                 <!--Navigation pills at the top right of the page-->
                 <ul class="nav nav-pills pull-right">
-                    <li role="presentation" class="active"><a href="#">Home</a>
+                    <li role="presentation" class="active"><%= link_to "Home", root_path %></a>
                     </li>
-                    <li role="presentation"><a href="#">About</a>
+                    <li role="presentation"><a href="/about">About</a>
                     </li>
                     <li role="presentation"><a href="#">Contact</a>
                     </li>
@@ -160,6 +160,15 @@
         </div>
     <% end %>
   <%= yield %>
+
+      <!--Footer content-->
+      <div id="footer-position">
+          <footer class="footer">
+              <hr>
+              <p>&copy; 2016 ProQuo, Inc.</p>
+          </footer>
+     </div>
+
     </div>
   </body>
 </html>
