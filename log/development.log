@@ -5543,3 +5543,153 @@ Processing by ApplicationController#about as HTML
 Completed 200 OK in 22ms (Views: 21.2ms | ActiveRecord: 0.1ms)
 
 
+Started GET "/about" for ::1 at 2016-11-19 15:33:55 -0400
+Processing by ApplicationController#about as HTML
+  Rendering application/about.html.erb within layouts/application
+  Rendered application/_header.html.erb (0.8ms)
+  Rendered application/_footer.html.erb (0.2ms)
+  Rendered application/about.html.erb within layouts/application (3.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 21ms (Views: 20.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/about" for ::1 at 2016-11-19 15:46:33 -0400
+Processing by ApplicationController#about as HTML
+  Rendering application/about.html.erb within layouts/application
+  Rendered application/_header.html.erb (1.0ms)
+  Rendered application/_footer.html.erb (0.5ms)
+  Rendered application/about.html.erb within layouts/application (4.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 312ms (Views: 311.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/about" for ::1 at 2016-11-19 15:53:57 -0400
+Processing by ApplicationController#about as HTML
+  Rendering application/about.html.erb within layouts/application
+  Rendered application/_header.html.erb (0.7ms)
+  Rendered application/_footer.html.erb (0.2ms)
+  Rendered application/about.html.erb within layouts/application (2.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 64ms (Views: 62.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/about" for ::1 at 2016-11-19 15:53:58 -0400
+Processing by ApplicationController#about as HTML
+  Rendering application/about.html.erb within layouts/application
+  Rendered application/_header.html.erb (0.9ms)
+  Rendered application/_footer.html.erb (0.4ms)
+  Rendered application/about.html.erb within layouts/application (3.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 28ms (Views: 27.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/about" for ::1 at 2016-11-19 15:55:03 -0400
+Processing by ApplicationController#about as HTML
+  Rendering application/about.html.erb within layouts/application
+  Rendered application/_header.html.erb (1.1ms)
+  Rendered application/_footer.html.erb (0.2ms)
+  Rendered application/about.html.erb within layouts/application (4.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 64ms (Views: 63.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/about" for ::1 at 2016-11-19 15:55:04 -0400
+Processing by ApplicationController#about as HTML
+  Rendering application/about.html.erb within layouts/application
+  Rendered application/_header.html.erb (0.8ms)
+  Rendered application/_footer.html.erb (0.2ms)
+  Rendered application/about.html.erb within layouts/application (3.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 34ms (Views: 31.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/about" for ::1 at 2016-11-19 15:55:14 -0400
+Processing by ApplicationController#about as HTML
+  Rendering application/about.html.erb within layouts/application
+  Rendered application/_header.html.erb (1.0ms)
+  Rendered application/_footer.html.erb (0.3ms)
+  Rendered application/about.html.erb within layouts/application (5.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 39ms (Views: 37.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/about" for ::1 at 2016-11-19 15:56:55 -0400
+Processing by ApplicationController#about as HTML
+  Rendering application/about.html.erb within layouts/application
+  Rendered application/_header.html.erb (2.1ms)
+  Rendered application/_footer.html.erb (0.3ms)
+  Rendered application/about.html.erb within layouts/application (7.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 64ms (Views: 62.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/about" for ::1 at 2016-11-19 15:56:57 -0400
+Processing by ApplicationController#about as HTML
+  Rendering application/about.html.erb within layouts/application
+  Rendered application/_header.html.erb (3.6ms)
+  Rendered application/_footer.html.erb (0.2ms)
+  Rendered application/about.html.erb within layouts/application (8.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 35ms (Views: 33.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/about" for ::1 at 2016-11-19 15:56:59 -0400
+Processing by ApplicationController#about as HTML
+  Rendering application/about.html.erb within layouts/application
+  Rendered application/_header.html.erb (1.5ms)
+  Rendered application/_footer.html.erb (1.1ms)
+  Rendered application/about.html.erb within layouts/application (8.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 38ms (Views: 36.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/about" for ::1 at 2016-11-19 15:57:59 -0400
+Processing by ApplicationController#about as HTML
+  Rendering application/about.html.erb within layouts/application
+  Rendered application/_header.html.erb (1.2ms)
+  Rendered application/_footer.html.erb (0.3ms)
+  Rendered application/about.html.erb within layouts/application (6.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 78ms (Views: 76.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/about" for ::1 at 2016-11-19 15:58:02 -0400
+Processing by ApplicationController#about as HTML
+  Rendering application/about.html.erb within layouts/application
+  Rendered application/_header.html.erb (1.1ms)
+  Rendered application/_footer.html.erb (0.3ms)
+  Rendered application/about.html.erb within layouts/application (4.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 39ms (Views: 35.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/about" for ::1 at 2016-11-19 15:59:18 -0400
+Processing by ApplicationController#about as HTML
+  Rendering application/about.html.erb within layouts/application
+  Rendered application/_header.html.erb (1.3ms)
+  Rendered application/_footer.html.erb (0.3ms)
+  Rendered application/about.html.erb within layouts/application (5.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 54ms (Views: 53.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/about" for ::1 at 2016-11-19 15:59:20 -0400
+Processing by ApplicationController#about as HTML
+  Rendering application/about.html.erb within layouts/application
+  Rendered application/_header.html.erb (0.9ms)
+  Rendered application/_footer.html.erb (0.2ms)
+  Rendered application/about.html.erb within layouts/application (3.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 23ms (Views: 21.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/about" for ::1 at 2016-11-19 16:01:01 -0400
+Processing by ApplicationController#about as HTML
+  Rendering application/about.html.erb within layouts/application
+  Rendered application/_header.html.erb (1.5ms)
+  Rendered application/_footer.html.erb (0.2ms)
+  Rendered application/about.html.erb within layouts/application (4.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 27ms (Views: 25.1ms | ActiveRecord: 0.2ms)
+
+
