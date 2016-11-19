@@ -157,7 +157,9 @@
             <h3 class="text-muted">{{title}}</h3>
         </div>
     <% end %>
-      <p id="notice"><%= notice %></p>
+      <% if notice %>
+        <p id="notice">I HAVE A NOTICE:<%= notice %></p>
+      <% end %>
   <%= yield %>
 
       <!--Footer content-->
