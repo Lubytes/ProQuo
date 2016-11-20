@@ -5,6 +5,9 @@ class UserController < ApplicationController
     # TODO get list of props owned by user ready.
     def show
         @user = User.find_by_username(params[:username])
+        if @user.nil?
+            render 'no_user'
+        end
     end
 
     # Register page
