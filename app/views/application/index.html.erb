@@ -48,15 +48,3 @@
 
     </md-grid-list>
 </div>
-
-<script>
-    //fix to close the login modal when clicking outside the box. Move over to Angular asap
-    var loginModal = document.getElementById('loginModal');
-    var signUpModal = document.getElementById('signUpModal');
-    window.onclick = function (event) {
-        if (event.target == loginModal || event.target == signUpModal) {
-            loginModal.style.display = "none";
-            signUpModal.style.display = "none";
-        }
-    }
-</script>

@@ -118,10 +118,17 @@
 
                 <%= form_tag controller: "user", action: "create", method: "post", class: "form-group" do %>
                     <!--username input-->
+
+                    <md-input-container class="md-icon-float md-block">
+                      <label>Full name</label>
+                      <md-icon class="name"><span class="glyphicon glyphicon-user"></span></md-icon>
+                      <input ng-model="user.name" type="text" ng-required="true" name="full_name">
+                    </md-input-container>
+
                     <md-input-container class="md-icon-float md-block">
                       <label>Username</label>
-                      <md-icon class="name"><span class="glyphicon glyphicon-user"></span></md-icon>
-                      <input ng-model="user.name" type="text" ng-required="true" name="username">
+                      <md-icon class="name"><span class="glyphicon glyphicon-console"></span></md-icon>
+                      <input ng-model="user.uname" type="text" ng-required="true" name="username">
                     </md-input-container>
 
                     <md-input-container class="md-icon-float md-block">
@@ -212,5 +219,18 @@
      </div>
 
     </div>
+
+    <script>
+        //fix to close the login modal when clicking outside the box. Move over to Angular asap
+        var loginModal = document.getElementById('loginModal');
+        var signUpModal = document.getElementById('signUpModal');
+        window.onclick = function (event) {
+            if (event.target == loginModal || event.target == signUpModal) {
+                loginModal.style.display = "none";
+                signUpModal.style.display = "none";
+            }
+        }
+    </script>
+
   </body>
 </html>
