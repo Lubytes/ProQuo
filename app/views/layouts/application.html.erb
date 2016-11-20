@@ -79,6 +79,13 @@
                 <h2>Login</h2>
               </div>
               <div class="modal-body">
+                <% if hasErrors(:loginErrors) %>
+                  <p>I have errors</p>
+                <% end %>
+                <% getErrors(:loginErrors).each do |error_message| %>
+                  <div class="alert alert-danger"><%= error_message %></div>
+                <% end %>
+
                 <%= form_for :session, url: login_path  do |f| %>
                     <!--username input-->
                     <md-input-container class="md-icon-float md-block">
@@ -112,17 +119,27 @@
                 <h2>Registration</h2>
               </div>
               <div class="modal-body">
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
                 <% getErrors(:registerError).each do |error_message| %>
                   <div class="alert alert-danger"><%= error_message %></div>
                 <% end %>
 
                 <%= form_tag controller: "user", action: "create", method: "post", class: "form-group" do %>
                     <!--username input-->
+
+                    <md-input-container class="md-icon-float md-block">
+                      <label>Full name</label>
+                      <md-icon class="name"><span class="glyphicon glyphicon-user"></span></md-icon>
+                      <input ng-model="user.name" type="text" ng-required="true" name="full_name">
+                    </md-input-container>
+
                     <md-input-container class="md-icon-float md-block">
                       <label>Username</label>
-                      <md-icon class="name"><span class="glyphicon glyphicon-user"></span></md-icon>
-                      <input ng-model="user.name" type="text" ng-required="true" name="username">
+                      <md-icon class="name"><span class="glyphicon glyphicon-console"></span></md-icon>
+                      <input ng-model="user.uname" type="text" ng-required="true" name="username">
                     </md-input-container>
 
                     <md-input-container class="md-icon-float md-block">
@@ -212,5 +229,18 @@
           </footer>
      </div>
     </div>
+
+    <script>
+        //fix to close the login modal when clicking outside the box. Move over to Angular asap
+        var loginModal = document.getElementById('loginModal');
+        var signUpModal = document.getElementById('signUpModal');
+        window.onclick = function (event) {
+            if (event.target == loginModal || event.target == signUpModal) {
+                loginModal.style.display = "none";
+                signUpModal.style.display = "none";
+            }
+        }
+    </script>
+
   </body>
 </html>

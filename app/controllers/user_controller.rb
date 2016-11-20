@@ -5,6 +5,9 @@ class UserController < ApplicationController
     # TODO get list of props owned by user ready.
     def show
         @user = User.find_by_username(params[:username])
+        if @user.nil?
+            render 'no_user'
+        end
     end
 
     # Register page
@@ -16,10 +19,7 @@ class UserController < ApplicationController
     # TODO actualy send email.
     # TODO make intermidiary step for user to not be active until email.
     def create
-        @user = User.new(params[:user])
-        @user.username = params[:username]
-        @user.password = params[:password]
-        @user.password_confirmation = params[:password_confirmation]
+        @user = User.new(user_params)
         if @user.save
             redirect_to :back, notice: 'Account was created.'
         else
@@ -31,11 +31,7 @@ class UserController < ApplicationController
             redirect_to :back
         end
     end
-<<<<<<< HEAD
-=======
-  end
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :description, :avatar)
+    params.permit(:username, :full_name, :email, :password, :password_confirmation, :description, :avatar)
   end
->>>>>>> master
 end
