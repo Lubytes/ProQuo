@@ -112,14 +112,10 @@
                 <h2>Registration</h2>
               </div>
               <div class="modal-body">
-
-<<<<<<< HEAD
-=======
                 <% getErrors(:registerError).each do |error_message| %>
                   <div class="alert alert-danger"><%= error_message %></div>
                 <% end %>
 
->>>>>>> master
                 <%= form_tag controller: "user", action: "create", method: "post", class: "form-group" do %>
                     <!--username input-->
                     <md-input-container class="md-icon-float md-block">
