@@ -1,6 +1,8 @@
 class SessionsController < ApplicationController
   # Login controller.
 
+  include ApplicationHelper
+
   # Login page
   def new
   end
@@ -13,8 +15,8 @@ class SessionsController < ApplicationController
       log_in user
       redirect_to '/users/' + user.username
     else
-      flash.now[:danger] = "Invalid Username and password Combination."
-      render 'new'
+      addToErrors(:loginErrors,"Invalid Username and Password combination.")
+      redirect_to :back
     end
   end
 
