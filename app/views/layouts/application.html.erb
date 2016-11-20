@@ -22,6 +22,48 @@
       <%= link_to "Log out", logout_path %>
 
 
+      <div class="header clearfix">
+          <nav>
+              <!--Navigation pills at the top right of the page-->
+              <ul class="nav nav-pills pull-right">
+                  <li role="presentation" class="active"><a href="#">Home</a>
+                  </li>
+                  <li role="presentation"><a href="#">About</a>
+                  </li>
+                  <li role="presentation"><a href="#">Contact</a>
+                  </li>
+                  <li role="presentation">
+                      <!--Account button-->
+                      <div class="md-menu-demo" ng-controller="LoginCtrl as ctrl" ng-cloak>
+
+                          <md-menu>
+                            <a href="#"><!--href based on nav nav-pills-->
+                                <md-button aria-label="account button" class="md-icon-button" ng-click="ctrl.openMenu($mdOpenMenu, $event)">
+                              <span class="glyphicon glyphicon-user"></span>
+                            </md-button>
+                            </a><!--end of href-->
+                            <md-menu-content width="4">
+                              <md-menu-item>
+                                <md-button ng-click="ctrl.login('loginModal')">
+                                  <span class="glyphicon glyphicon-tree-deciduous" ></span>
+                                  Login
+                                </md-button>
+                              </md-menu-item>
+                              <md-menu-item>
+                                <md-button ng-click="ctrl.signup('signUpModal')">
+                                  <span class="glyphicon glyphicon-grain" ></span>
+                                  Sign Up
+                                </md-button>
+                              </md-menu-item>
+                            </md-menu-content>
+                          </md-menu>
+                      </div>
+                      <!--end of account button-->
+                  </li>
+              </ul>
+          </nav>
+          <h3 class="text-muted">{{title}}</h3>
+      </div>
 
 
     <!--If user is not logeed in-->
