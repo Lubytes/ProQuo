@@ -113,10 +113,13 @@
               </div>
               <div class="modal-body">
 
+<<<<<<< HEAD
+=======
                 <% getErrors(:registerError).each do |error_message| %>
                   <div class="alert alert-danger"><%= error_message %></div>
                 <% end %>
 
+>>>>>>> master
                 <%= form_tag controller: "user", action: "create", method: "post", class: "form-group" do %>
                     <!--username input-->
                     <md-input-container class="md-icon-float md-block">
@@ -160,9 +163,9 @@
             <nav>
                 <!--Navigation pills at the top right of the page-->
                 <ul class="nav nav-pills pull-right">
-                    <li role="presentation" class="active"><a href="#">Home</a>
+                    <li role="presentation" class="active"><%= link_to "Home", root_path %></a>
                     </li>
-                    <li role="presentation"><a href="#">About</a>
+                    <li role="presentation"><a href="/about">About</a>
                     </li>
                     <li role="presentation"><a href="#">Contact</a>
                     </li>

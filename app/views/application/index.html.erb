@@ -1,8 +1,8 @@
-
-
 <!--Search bar at the top of the page-->
 <div class="input-group input-group-lg" id="search-bar">
-    <span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
+    <span class="input-group-addon" id="sizing-addon1">
+        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+    </span>
     <input type="text" class="form-control" placeholder="What are you looking for?" aria-describedby="sizing-addon1">
 </div>
 
@@ -49,12 +49,11 @@
     </md-grid-list>
 </div>
 
-
 <script>
     //fix to close the login modal when clicking outside the box. Move over to Angular asap
     var loginModal = document.getElementById('loginModal');
     var signUpModal = document.getElementById('signUpModal');
-    window.onclick = function(event) {
+    window.onclick = function (event) {
         if (event.target == loginModal || event.target == signUpModal) {
             loginModal.style.display = "none";
             signUpModal.style.display = "none";
