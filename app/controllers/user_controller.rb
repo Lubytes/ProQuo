@@ -19,10 +19,7 @@ class UserController < ApplicationController
     # TODO actualy send email.
     # TODO make intermidiary step for user to not be active until email.
     def create
-        @user = User.new(params[:user])
-        @user.username = params[:username]
-        @user.password = params[:password]
-        @user.password_confirmation = params[:password_confirmation]
+        @user = User.new(user_params)
         if @user.save
             redirect_to :back, notice: 'Account was created.'
         else
@@ -35,6 +32,6 @@ class UserController < ApplicationController
         end
     end
   def user_params
-    params.require(:user).permit(:full_name, :email, :password, :password_confirmation, :description, :avatar)
+    params.permit(:username, :full_name, :email, :password, :password_confirmation, :description, :avatar)
   end
 end
