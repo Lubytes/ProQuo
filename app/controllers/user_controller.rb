@@ -31,7 +31,6 @@ class UserController < ApplicationController
             redirect_to :back
         end
     end
-  end
   def user_params
     params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :description, :avatar)
   end
