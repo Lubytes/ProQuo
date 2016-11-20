@@ -43,23 +43,23 @@ app.controller('aboutCtrl', ['$scope',
         $scope.header = "About Us";
         $scope.para = "Lorem ipsum dolor sit amet, consectetur adipisicing elit.";
         $scope.authors = [{
-            name: 'John Smith',
+            name: 'Raphael Bronfman-Nadas',
+            pic: 'http://placehold.it/200x200',
+            todo: '[What does this team member to? Keep it short! This is also a great spot for social links!]'
+        }, {
+            name: 'Brandon Poole',
+            pic: 'http://placehold.it/200x200',
+            todo: 'Being head of front end is all fun and games until we get a userbase. '
+        }, {
+            name: 'Roc Wang',
             pic: 'http://placehold.it/200x200',
             todo: 'What does this team member to? Keep it short! This is also a great spot for social links!'
         }, {
-            name: 'John Smith',
+            name: 'Ivana Kutesa',
             pic: 'http://placehold.it/200x200',
             todo: 'What does this team member to? Keep it short! This is also a great spot for social links!'
         }, {
-            name: 'John Smith',
-            pic: 'http://placehold.it/200x200',
-            todo: 'What does this team member to? Keep it short! This is also a great spot for social links!'
-        }, {
-            name: 'John Smith',
-            pic: 'http://placehold.it/200x200',
-            todo: 'What does this team member to? Keep it short! This is also a great spot for social links!'
-        }, {
-            name: 'John Smith',
+            name: 'Salman Malik',
             pic: 'http://placehold.it/200x200',
             todo: 'What does this team member to? Keep it short! This is also a great spot for social links!'
         }];
