@@ -22,15 +22,15 @@
       <%= link_to "Log out", logout_path %>
 
 
-      <div class="header clearfix">
+      <div class="header clearfix" np-controller="NavCtrl">
           <nav>
               <!--Navigation pills at the top right of the page-->
-              <ul class="nav nav-pills pull-right">
-                  <li role="presentation" class="active"><a href="#">Home</a>
+              <ul class="nav nav-pills pull-right" np-controller="NavCtrl">
+                  <li role="presentation" ng-class={{class}} ng-click="changeClass()"><%= link_to "Home", root_path %>
                   </li>
-                  <li role="presentation"><a href="#">About</a>
+                  <li role="presentation" ng-class={{class}} ng-click="changeClass()"><a href="#">About</a>
                   </li>
-                  <li role="presentation"><a href="#">Contact</a>
+                  <li role="presentation" ng-class={{class}} ng-click="changeClass()"><a href="#">Contact</a>
                   </li>
                   <li role="presentation">
                       <!--Account button-->
@@ -113,13 +113,10 @@
               </div>
               <div class="modal-body">
 
-<<<<<<< HEAD
-=======
                 <% getErrors(:registerError).each do |error_message| %>
                   <div class="alert alert-danger"><%= error_message %></div>
                 <% end %>
 
->>>>>>> master
                 <%= form_tag controller: "user", action: "create", method: "post", class: "form-group" do %>
                     <!--username input-->
                     <md-input-container class="md-icon-float md-block">
@@ -159,15 +156,15 @@
         <!--end sign up modal-->
 
 
-        <div class="header clearfix">
+        <div class="header clearfix" np-controller="NavCtrl">
             <nav>
                 <!--Navigation pills at the top right of the page-->
-                <ul class="nav nav-pills pull-right">
-                    <li role="presentation" class="active"><%= link_to "Home", root_path %></a>
+                <ul class="nav nav-pills pull-right" np-controller="NavCtrl">
+                    <li role="presentation" ng-class={{class}} ng-click="changeClass()"><%= link_to "Home", root_path %>
                     </li>
-                    <li role="presentation"><a href="/about">About</a>
+                    <li role="presentation" ng-class={{class}} ng-click="changeClass()"><a href="/about">About</a>
                     </li>
-                    <li role="presentation"><a href="#">Contact</a>
+                    <li role="presentation" ng-class={{class}} ng-click="changeClass()"><a href="#">Contact</a>
                     </li>
                     <li role="presentation">
                         <!--Account button-->
@@ -214,7 +211,6 @@
               <p>&copy; 2016 ProQuo, Inc.</p>
           </footer>
      </div>
-
     </div>
   </body>
 </html>

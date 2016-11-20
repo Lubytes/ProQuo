@@ -65,3 +65,13 @@ app.controller('aboutCtrl', ['$scope',
         }];
     }
 ]);
+
+//navgation bar
+app.controller('NavCtrl',['$scope',
+    function($scope){
+        $scope.class = "nonactive";
+        $scope.changeClass=function(){
+            $scope.class="active";
+        }
+    }
+]);
