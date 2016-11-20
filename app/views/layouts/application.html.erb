@@ -79,6 +79,13 @@
                 <h2>Login</h2>
               </div>
               <div class="modal-body">
+                <% if hasErrors(:loginErrors) %>
+                  <p>I have errors</p>
+                <% end %>
+                <% getErrors(:loginErrors).each do |error_message| %>
+                  <div class="alert alert-danger"><%= error_message %></div>
+                <% end %>
+
                 <%= form_for :session, url: login_path  do |f| %>
                     <!--username input-->
                     <md-input-container class="md-icon-float md-block">

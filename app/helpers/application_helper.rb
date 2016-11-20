@@ -6,6 +6,10 @@ module ApplicationHelper
     session[:errors][where.to_s].push(what)
   end
 
+  def hasErrors(where)
+    return session[:errors][where.to_s].nil? || session[:errors][where.to_s].empty?
+  end
+
   def getErrors(where)
     ErrorsSetup(where)
 
