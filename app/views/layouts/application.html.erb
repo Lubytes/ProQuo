@@ -22,6 +22,48 @@
       <%= link_to "Log out", logout_path %>
 
 
+      <div class="header clearfix">
+          <nav>
+              <!--Navigation pills at the top right of the page-->
+              <ul class="nav nav-pills pull-right">
+                  <li role="presentation" class="active"><a href="#">Home</a>
+                  </li>
+                  <li role="presentation"><a href="#">About</a>
+                  </li>
+                  <li role="presentation"><a href="#">Contact</a>
+                  </li>
+                  <li role="presentation">
+                      <!--Account button-->
+                      <div class="md-menu-demo" ng-controller="LoginCtrl as ctrl" ng-cloak>
+
+                          <md-menu>
+                            <a href="#"><!--href based on nav nav-pills-->
+                                <md-button aria-label="account button" class="md-icon-button" ng-click="ctrl.openMenu($mdOpenMenu, $event)">
+                              <span class="glyphicon glyphicon-user"></span>
+                            </md-button>
+                            </a><!--end of href-->
+                            <md-menu-content width="4">
+                              <md-menu-item>
+                                <md-button ng-click="ctrl.login('loginModal')">
+                                  <span class="glyphicon glyphicon-tree-deciduous" ></span>
+                                  Login
+                                </md-button>
+                              </md-menu-item>
+                              <md-menu-item>
+                                <md-button ng-click="ctrl.signup('signUpModal')">
+                                  <span class="glyphicon glyphicon-grain" ></span>
+                                  Sign Up
+                                </md-button>
+                              </md-menu-item>
+                            </md-menu-content>
+                          </md-menu>
+                      </div>
+                      <!--end of account button-->
+                  </li>
+              </ul>
+          </nav>
+          <h3 class="text-muted">{{title}}</h3>
+      </div>
 
 
     <!--If user is not logeed in-->
@@ -71,32 +113,39 @@
               </div>
               <div class="modal-body">
 
+<<<<<<< HEAD
+=======
+                <% getErrors(:registerError).each do |error_message| %>
+                  <div class="alert alert-danger"><%= error_message %></div>
+                <% end %>
+
+>>>>>>> master
                 <%= form_tag controller: "user", action: "create", method: "post", class: "form-group" do %>
                     <!--username input-->
                     <md-input-container class="md-icon-float md-block">
                       <label>Username</label>
                       <md-icon class="name"><span class="glyphicon glyphicon-user"></span></md-icon>
-                      <input ng-model="user.name" type="text" ng-required="true" name="session[username]">
+                      <input ng-model="user.name" type="text" ng-required="true" name="username">
                     </md-input-container>
 
                     <md-input-container class="md-icon-float md-block">
                       <label>Email</label>
                       <md-icon class="name"><span class="glyphicon glyphicon-envelope"></span></md-icon>
-                      <input ng-model="user.email" type="text" ng-required="true" name="session[email]">
+                      <input ng-model="user.email" type="text" ng-required="true" name="email">
                     </md-input-container>
 
                     <!--password input-->
                     <md-input-container class="md-block">
                       <label>Password</label>
                       <md-icon class="password"><span class="glyphicon glyphicon-file"></span></md-icon>
-                      <input ng-model="user.password" type="password" ng-required="true" name="session[password]">
+                      <input ng-model="user.password" type="password" ng-required="true" name="password">
                     </md-input-container>
 
                     <!--confirm password input-->
                     <md-input-container class="md-block">
                       <label>Confirm Password</label>
                       <md-icon class="password"><span class="glyphicon glyphicon-duplicate"></span></md-icon>
-                      <input ng-model="user.password_confirm" type="password" ng-required="true" name="session[password_confirm]">
+                      <input ng-model="user.password_confirm" type="password" ng-required="true" name="password_confirm">
                     </md-input-container>
 
                     <button type="submit" class="btn btn-success btn-block" name="commit"><span class="glyphicon glyphicon-send"></span> Submit</button>
@@ -153,6 +202,9 @@
             <h3 class="text-muted">{{title}}</h3>
         </div>
     <% end %>
+      <% if notice %>
+        <p id="notice">I HAVE A NOTICE:<%= notice %></p>
+      <% end %>
   <%= yield %>
 
       <!--Footer content-->
