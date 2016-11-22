@@ -1,7 +1,7 @@
 require 'bcrypt'
 
 class User < ApplicationRecord
-  has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
+  has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "https://image.freepik.com/free-icon/question-mark_318-52837.jpg"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
   # If a user gets destroyed, delete all props owned by them.
