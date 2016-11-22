@@ -1,16 +1,11 @@
-<div class="container">
-
-
-    <div class="card hovercard">
-        <div class="card-background">
-            <img class="card-bkimg" alt="" src="<%= @user.avatar.url(:thumb) %>">
-        </div>
-        <div class="useravatar">
-            <img alt="" src="<%= @user.avatar.url(:thumb) %>">
-        </div>
-        <div class="card-info"> <span class="card-title"><%= @user.username %></span>
-
-        </div>
+<div class="card hovercard">
+    <div class="card-background">
+        <img class="card-bkimg" alt="" src="<%= @user.avatar.url(:thumb) %>">
     </div>
+    <div class="useravatar">
+        <img alt="" src="<%= @user.avatar.url(:thumb) %>">
+    </div>
+    <div class="card-info"> <span class="card-title"><%= @user.username %></span>
 
+    </div>
 </div>
