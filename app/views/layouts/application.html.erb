@@ -1,246 +1,274 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>ProQuo</title>
-    <%= csrf_meta_tags %>
+<html ng-app="proquo">
+    <head>
+        <title>ProQuo</title>
+        <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
+        <%= stylesheet_link_tag    'application', media: 'all' %>
+        <%= javascript_include_tag 'application' %>
 
-    <!-- Bootstrap core CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-  </head>
+        <!-- Bootstrap core CSS -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    </head>
 
-  <body ng-app="proquo" ng-controller="MainCtrl">
-    <div class="container">
+    <body ng-app="proquo" ng-controller="MainCtrl">
+        <div class="container">
 
+            <!--if user is logged in-->
+            <% if logged_in? %>
+            <!-- This will be displayed if a user is logged in.  Use this as a template for what to do somewhere-->
+            <div><%= current_user.username %></div>
+            <%= link_to "Log out", logout_path %>
 
-    <!--if user is logged in-->
-    <% if logged_in? %>
-      <!-- This will be displayed if a user is logged in.  Use this as a template for what to do somewhere-->
-      <div><%= current_user.username %></div>
-      <%= link_to "Log out", logout_path %>
+            <div class="header clearfix">
+                <nav>
+                    <!-- <ul class="nav nav-pills pull-right" ng-controller='NavCtrl'>
+                        <li>
+                            <a href="/" ng-class="{active: isActive('/')}">Home</a>
+                        </li>
 
+                        <li>
+                            <a href="/about" ng-class="{active: isActive('/about')}">isActive('/')</a>
+                        </li>
 
-      <div class="header clearfix" np-controller="NavCtrl">
-          <nav>
-              <!--Navigation pills at the top right of the page-->
-              <ul class="nav nav-pills pull-right" np-controller="NavCtrl">
-                  <li role="presentation" ng-class={{class}} ng-click="changeClass()"><%= link_to "Home", root_path %>
-                  </li>
-                  <li role="presentation" ng-class={{class}} ng-click="changeClass()"><a href="#">About</a>
-                  </li>
-                  <li role="presentation" ng-class={{class}} ng-click="changeClass()"><a href="#">Contact</a>
-                  </li>
-                  <li role="presentation">
-                      <!--Account button-->
-                      <div class="md-menu-demo" ng-controller="LoginCtrl as ctrl" ng-cloak>
+                        <li>
+                            <a href="#" ng-class="{active: isActive('#')}">Contact</a>
+                        </li> -->
 
-                          <md-menu>
-                            <a href="#"><!--href based on nav nav-pills-->
-                                <md-button aria-label="account button" class="md-icon-button" ng-click="ctrl.openMenu($mdOpenMenu, $event)">
-                              <span class="glyphicon glyphicon-user"></span>
-                            </md-button>
-                            </a><!--end of href-->
-                            <md-menu-content width="4">
-                              <md-menu-item>
-                                <md-button ng-click="ctrl.login('loginModal')">
-                                  <span class="glyphicon glyphicon-tree-deciduous" ></span>
-                                  Login
-                                </md-button>
-                              </md-menu-item>
-                              <md-menu-item>
-                                <md-button ng-click="ctrl.signup('signUpModal')">
-                                  <span class="glyphicon glyphicon-grain" ></span>
-                                  Sign Up
-                                </md-button>
-                              </md-menu-item>
-                            </md-menu-content>
-                          </md-menu>
-                      </div>
-                      <!--end of account button-->
-                  </li>
-              </ul>
-          </nav>
-          <h3 class="text-muted">{{title}}</h3>
-      </div>
+                        <ul class="nav nav-pills pull-right" ng-controller='NavCtrl'>
+                            <li ng-repeat="item in items" ng-class="{'active': item.title == states.activeItem}" ng-click="states.activeItem=item.title">
+                                <a href="{{item.link}}">{{item.title}}</a></li>
+                        <li role="presentation">
+                            <!--Account button-->
+                            <div class="md-menu-demo" ng-controller="LoginCtrl as ctrl" ng-cloak>
 
-
-    <!--If user is not logeed in-->
-    <% else %>
-
-        <!-- Modal content -->
-
-        <!--Modal implemented using http://www.w3schools.com/howto/howto_css_modals.asp-->
-        <div ng-controller="LoginCtrl as ctrl" id="loginModal" class="modal">
-            <div class="modal-content">
-              <div class="modal-header">
-                <span ng-click="ctrl.close('loginModal')" class="close">×</span>
-                <h2>Login</h2>
-              </div>
-              <div class="modal-body">
-                <% if hasErrors(:loginErrors) %>
-                  <p>I have errors</p>
-                <% end %>
-                <% getErrors(:loginErrors).each do |error_message| %>
-                  <div class="alert alert-danger"><%= error_message %></div>
-                <% end %>
-
-                <%= form_for :session, url: login_path  do |f| %>
-                    <!--username input-->
-                    <md-input-container class="md-icon-float md-block">
-                      <label>Username</label>
-                      <md-icon class="name"><span class="glyphicon glyphicon-user"></span></md-icon>
-                      <input ng-model="user.name" type="text" ng-required="true" name="session[username]">
-                    </md-input-container>
-
-                    <!--password input-->
-                    <md-input-container class="md-block">
-                      <label>Password</label>
-                      <md-icon class="password"><span class="glyphicon glyphicon-lock"></span></md-icon>
-                      <input ng-model="user.password" type="password" ng-required="true" name="session[password]">
-                    </md-input-container>
-
-                    <button type="submit" class="btn btn-success btn-block" name="commit"><span class="glyphicon glyphicon-send"></span> Submit</button>
-                <% end %>
-              </div>
-              <div class="modal-footer">
-
-              </div>
+                                <md-menu>
+                                    <a href="#">
+                                        <!--href based on nav nav-pills-->
+                                        <md-button aria-label="account button" class="md-icon-button" ng-click="ctrl.openMenu($mdOpenMenu, $event)">
+                                            <span class="glyphicon glyphicon-user"></span>
+                                        </md-button>
+                                    </a>
+                                    <!--end of href-->
+                                    <md-menu-content width="4">
+                                        <md-menu-item>
+                                            <md-button ng-click="ctrl.login('loginModal')">
+                                                <span class="glyphicon glyphicon-tree-deciduous"></span>
+                                                Login
+                                            </md-button>
+                                        </md-menu-item>
+                                        <md-menu-item>
+                                            <md-button ng-click="ctrl.signup('signUpModal')">
+                                                <span class="glyphicon glyphicon-grain"></span>
+                                                Sign Up
+                                            </md-button>
+                                        </md-menu-item>
+                                    </md-menu-content>
+                                </md-menu>
+                            </div>
+                            <!--end of account button-->
+                        </li>
+                    </ul>
+                </nav>
+                <h3 class="text-muted">{{title}}</h3>
             </div>
-        </div>
-        <!--end modal content for login-->
 
-        <!--Sign up modal content-->
-        <div ng-controller="LoginCtrl as ctrl" id="signUpModal" class="modal">
-            <div class="modal-content">
-              <div class="modal-header">
-                <span ng-click="ctrl.close('signUpModal')" class="close">×</span>
-                <h2>Registration</h2>
-              </div>
-              <div class="modal-body">
-<<<<<<< HEAD
+            <!--If user is not logeed in-->
+        <% else %>
 
-=======
->>>>>>> master
-                <% getErrors(:registerError).each do |error_message| %>
-                  <div class="alert alert-danger"><%= error_message %></div>
-                <% end %>
+            <!-- Modal content -->
 
-                <%= form_tag controller: "user", action: "create", method: "post", class: "form-group" do %>
-                    <!--username input-->
+            <!--Modal implemented using http://www.w3schools.com/howto/howto_css_modals.asp-->
+            <div ng-controller="LoginCtrl as ctrl" id="loginModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span ng-click="ctrl.close('loginModal')" class="close">×</span>
+                        <h2>Login</h2>
+                    </div>
+                    <div class="modal-body">
+                        <% if hasErrors(:loginErrors) %>
+                        <p>I have errors</p>
+                        <% end %>
+                        <% getErrors(:loginErrors).each do |error_message| %>
+                        <div class="alert alert-danger"><%= error_message %></div>
+                        <% end %>
 
-                    <md-input-container class="md-icon-float md-block">
-                      <label>Full name</label>
-                      <md-icon class="name"><span class="glyphicon glyphicon-user"></span></md-icon>
-                      <input ng-model="user.name" type="text" ng-required="true" name="full_name">
-                    </md-input-container>
-
-                    <md-input-container class="md-icon-float md-block">
-                      <label>Username</label>
-                      <md-icon class="name"><span class="glyphicon glyphicon-console"></span></md-icon>
-                      <input ng-model="user.uname" type="text" ng-required="true" name="username">
-                    </md-input-container>
-
-                    <md-input-container class="md-icon-float md-block">
-                      <label>Email</label>
-                      <md-icon class="name"><span class="glyphicon glyphicon-envelope"></span></md-icon>
-                      <input ng-model="user.email" type="text" ng-required="true" name="email">
-                    </md-input-container>
-
-                    <!--password input-->
-                    <md-input-container class="md-block">
-                      <label>Password</label>
-                      <md-icon class="password"><span class="glyphicon glyphicon-file"></span></md-icon>
-                      <input ng-model="user.password" type="password" ng-required="true" name="password">
-                    </md-input-container>
-
-                    <!--confirm password input-->
-                    <md-input-container class="md-block">
-                      <label>Confirm Password</label>
-                      <md-icon class="password"><span class="glyphicon glyphicon-duplicate"></span></md-icon>
-                      <input ng-model="user.password_confirm" type="password" ng-required="true" name="password_confirm">
-                    </md-input-container>
-
-                    <button type="submit" class="btn btn-success btn-block" name="commit"><span class="glyphicon glyphicon-send"></span> Submit</button>
-                <% end %>
-              </div>
-              <div class="modal-footer">
-
-              </div>
-            </div>
-        </div>
-        <!--end sign up modal-->
-
-
-        <div class="header clearfix" np-controller="NavCtrl">
-            <nav>
-                <!--Navigation pills at the top right of the page-->
-                <ul class="nav nav-pills pull-right" np-controller="NavCtrl">
-                    <li role="presentation" ng-class={{class}} ng-click="changeClass()"><%= link_to "Home", root_path %>
-                    </li>
-                    <li role="presentation" ng-class={{class}} ng-click="changeClass()"><a href="/about">About</a>
-                    </li>
-                    <li role="presentation" ng-class={{class}} ng-click="changeClass()"><a href="#">Contact</a>
-                    </li>
-                    <li role="presentation">
-                        <!--Account button-->
-                        <div class="md-menu-demo" ng-controller="LoginCtrl as ctrl" ng-cloak>
-
-                            <md-menu>
-                              <a href="#"><!--href based on nav nav-pills-->
-                                  <md-button aria-label="account button" class="md-icon-button" ng-click="ctrl.openMenu($mdOpenMenu, $event)">
+                        <%= form_for :session, url: login_path  do |f| %>
+                        <!--username input-->
+                        <md-input-container class="md-icon-float md-block">
+                            <label>Username</label>
+                            <md-icon class="name">
                                 <span class="glyphicon glyphicon-user"></span>
-                              </md-button>
-                              </a><!--end of href-->
-                              <md-menu-content width="4">
-                                <md-menu-item>
-                                  <md-button ng-click="ctrl.login('loginModal')">
-                                    <span class="glyphicon glyphicon-tree-deciduous" ></span>
-                                    Login
-                                  </md-button>
-                                </md-menu-item>
-                                <md-menu-item>
-                                  <md-button ng-click="ctrl.signup('signUpModal')">
-                                    <span class="glyphicon glyphicon-grain" ></span>
-                                    Sign Up
-                                  </md-button>
-                                </md-menu-item>
-                              </md-menu-content>
-                            </md-menu>
-                        </div>
-                        <!--end of account button-->
-                    </li>
-                </ul>
-            </nav>
-            <h3 class="text-muted">{{title}}</h3>
-        </div>
-    <% end %>
-      <% if notice %>
-        <p id="notice">I HAVE A NOTICE:<%= notice %></p>
-      <% end %>
-  <%= yield %>
+                            </md-icon>
+                            <input ng-model="user.name" type="text" ng-required="true" name="session[username]">
+                        </md-input-container>
 
-      <!--Footer content-->
-      <div id="footer-position">
-          <footer class="footer">
-              <hr>
-              <p>&copy; 2016 ProQuo, Inc.</p>
-          </footer>
-     </div>
-    </div>
+                        <!--password input-->
+                        <md-input-container class="md-block">
+                            <label>Password</label>
+                            <md-icon class="password">
+                                <span class="glyphicon glyphicon-lock"></span>
+                            </md-icon>
+                            <input ng-model="user.password" type="password" ng-required="true" name="session[password]">
+                        </md-input-container>
 
-    <script>
-        //fix to close the login modal when clicking outside the box. Move over to Angular asap
-        var loginModal = document.getElementById('loginModal');
-        var signUpModal = document.getElementById('signUpModal');
-        window.onclick = function (event) {
-            if (event.target == loginModal || event.target == signUpModal) {
-                loginModal.style.display = "none";
-                signUpModal.style.display = "none";
-            }
-        }
-    </script>
+                        <button type="submit" class="btn btn-success btn-block" name="commit">
+                            <span class="glyphicon glyphicon-send"></span>
+                            Submit</button>
+                        <% end %>
+                    </div>
+                    <div class="modal-footer"></div>
+                </div>
+            </div>
+            <!--end modal content for login-->
 
-  </body>
-</html>
+            <!--Sign up modal content-->
+            <div ng-controller="LoginCtrl as ctrl" id="signUpModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span ng-click="ctrl.close('signUpModal')" class="close">×</span>
+                        <h2>Registration</h2>
+                    </div>
+                    <div class="modal-body">
+
+                        <% getErrors(:registerError).each do |error_message| %>
+                        <div class="alert alert-danger"><%= error_message %></div>
+                        <% end %>
+
+                        <%= form_tag controller: "user", action: "create", method: "post", class: "form-group" do %>
+                        <!--username input-->
+
+                        <md-input-container class="md-icon-float md-block">
+                            <label>Full name</label>
+                            <md-icon class="name">
+                                <span class="glyphicon glyphicon-user"></span>
+                            </md-icon>
+                            <input ng-model="user.name" type="text" ng-required="true" name="full_name">
+                        </md-input-container>
+
+                        <md-input-container class="md-icon-float md-block">
+                            <label>Username</label>
+                            <md-icon class="name">
+                                <span class="glyphicon glyphicon-console"></span>
+                            </md-icon>
+                            <input ng-model="user.uname" type="text" ng-required="true" name="username">
+                        </md-input-container>
+
+                        <md-input-container class="md-icon-float md-block">
+                            <label>Email</label>
+                            <md-icon class="name">
+                                <span class="glyphicon glyphicon-envelope"></span>
+                            </md-icon>
+                            <input ng-model="user.email" type="text" ng-required="true" name="email">
+                        </md-input-container>
+
+                        <!--password input-->
+                        <md-input-container class="md-block">
+                            <label>Password</label>
+                            <md-icon class="password">
+                                <span class="glyphicon glyphicon-file"></span>
+                            </md-icon>
+                            <input ng-model="user.password" type="password" ng-required="true" name="password">
+                        </md-input-container>
+
+                        <!--confirm password input-->
+                        <md-input-container class="md-block">
+                            <label>Confirm Password</label>
+                            <md-icon class="password">
+                                <span class="glyphicon glyphicon-duplicate"></span>
+                            </md-icon>
+                            <input ng-model="user.password_confirm" type="password" ng-required="true" name="password_confirm">
+                        </md-input-container>
+
+                        <button type="submit" class="btn btn-success btn-block" name="commit">
+                            <span class="glyphicon glyphicon-send"></span>
+                            Submit</button>
+                        <% end %>
+                    </div>
+                    <div class="modal-footer"></div>
+                </div>
+            </div>
+            <!--end sign up modal-->
+
+            <div class="header clearfix">
+                <nav>
+                    <body ng-controller="MainCtrl">
+                        <!-- <ul class="nav nav-pills pull-right" ng-controller="NavCtrl">
+                            <li>
+                                <a href="/" ng-class="{active: isActive('/')}">Home</a>
+                            </li>
+
+                            <li>
+                                <a href="/about" ng-class="{active: isActive('/about')}">isActive('/')</a>
+                            </li>
+
+                            <li>
+                                <a href="#" ng-class="{active: isActive('#')}">Contact</a>
+                            </li> -->
+                            <ul class="nav nav-pills pull-right" ng-controller='NavCtrl'>
+                                <li ng-repeat="item in items" ng-class="{'active': item.title == states.activeItem}" ng-click="states.activeItem=item.title">
+                                    <a href="{{item.link}}">{{item.title}}</a></li>
+
+
+                            <li role="presentation">
+                                <div class="md-menu-demo" ng-controller="LoginCtrl as ctrl" ng-cloak>
+                                    <!-- Accout Button -->
+                                    <md-menu>
+                                        <a href="#">
+                                            <!--href based on nav nav-pills-->
+                                            <md-button aria-label="account button" class="md-icon-button" ng-click="ctrl.openMenu($mdOpenMenu, $event)">
+                                                <span class="glyphicon glyphicon-user"></span>
+                                            </md-button>
+                                        </a>
+                                        <!--end of href-->
+                                        <md-menu-content width="4">
+                                            <md-menu-item>
+                                                <md-button ng-click="ctrl.login('loginModal')">
+                                                    <span class="glyphicon glyphicon-tree-deciduous"></span>
+                                                    Login
+                                                </md-button>
+                                            </md-menu-item>
+                                            <md-menu-item>
+                                                <md-button ng-click="ctrl.signup('signUpModal')">
+                                                    <span class="glyphicon glyphicon-grain"></span>
+                                                    Sign Up
+                                                </md-button>
+                                            </md-menu-item>
+                                        </md-menu-content>
+                                    </md-menu>
+                                </div>
+                                <!--end of account button-->
+                            </li>
+                        </ul>
+                    </nav>
+                    <h3 class="text-muted">{{title}}</h3>
+                </div>
+                <% end %>
+                <% if notice %>
+                <p id="notice">I HAVE A NOTICE:<%= notice %></p>
+                <% end %>
+                <%= yield %>
+
+                <!--Footer content-->
+                <div id="footer-position">
+                    <footer class="footer">
+                        <hr>
+                        <p>&copy; 2016 ProQuo, Inc.</p>
+                    </footer>
+                </div>
+            </div>
+
+            <script>
+                //fix to close the login modal when clicking outside the box. Move over to Angular asap
+                var loginModal = document.getElementById('loginModal');
+                var signUpModal = document.getElementById('signUpModal');
+                window.onclick = function (event) {
+                    if (event.target == loginModal || event.target == signUpModal) {
+                        loginModal.style.display = "none";
+                        signUpModal.style.display = "none";
+                    }
+                }
+            </script>
+
+        </body>
+    </html>
