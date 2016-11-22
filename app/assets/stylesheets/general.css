@@ -2,13 +2,9 @@
     padding-top: 4em;
 }
 
-.footer-position {
-    position: relative;
-}
 
 footer {
-    position: absolute;
-    bottom: 0;
+    width: 100%;
     padding-top: 2em;
 }
 
