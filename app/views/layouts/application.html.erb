@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-
+<<<<<<< HEAD
 <html ng-app="proquo">
-
+=======
+<html>
+>>>>>>> master
     <head>
         <title>ProQuo</title>
         <%= csrf_meta_tags %>
@@ -24,10 +26,22 @@
 
             <div class="header clearfix">
                 <nav>
-
+<<<<<<< HEAD
                     <ul class="nav nav-pills pull-right" ng-controller='NavCtrl'>
                         <li ng-repeat="item in items" ng-class="{'active': item.title == states.activeItem}" ng-click="states.activeItem=item.title">
                             <a href="{{item.link}}">{{item.title}}</a>
+=======
+                    <!--Navigation pills at the top right of the page-->
+                    <ul class="nav nav-pills pull-right">
+                        <li role="presentation" class="active">
+                            <a href="#">Home</a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#">About</a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#">Contact</a>
+>>>>>>> master
                         </li>
                         <li role="presentation">
                             <!--Account button-->
@@ -62,6 +76,7 @@
                     </ul>
                 </nav>
                 <h3 class="text-muted">{{title}}</h3>
+<<<<<<< HEAD
             </div>
 
             <!--If user is not logeed in-->
