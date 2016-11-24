@@ -15,5 +15,9 @@
   <%= @prop.user.username %>
 </p>
 
+<p>
+  <a href="<%= @prop.image.url(:large) %>"><img alt="" src="<%= @prop.image.url(:medium) %>"></a>
+</p>
+
 <%= link_to 'Edit', edit_prop_path(@prop) %> |
 <%= link_to 'Back', props_path %>
