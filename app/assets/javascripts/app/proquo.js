@@ -10,7 +10,7 @@ app.controller('MainCtrl', ['$scope',
 ]);
 
 //login and sign up controller. Creates dialogues and redirects depending on which button the user clicks
-app.controller('LoginCtrl', ['$scope',
+app.controller('modalPopup', ['$scope',
     function DemoCtrl($scope, $mdDialog) {
         if ($scope.hideLogin === undefined) {
             $scope.hideLogin = "true";
@@ -20,20 +20,16 @@ app.controller('LoginCtrl', ['$scope',
             $mdOpenMenu(ev);
         };
 
-        //closing any dialogue box (for now only closes one specfic). Use a function variable in the future
+        //closing any dialogue box
         this.close = function(id) {
             document.getElementById(id).style.display = "none";
         };
 
         //if the user wants to login
-        this.login = function(id) {
+        this.open = function(id) {
             document.getElementById(id).style.display = "block";
         };
 
-        //if the user decides to create an account
-        this.signup = function(id) {
-            document.getElementById(id).style.display = "block";
-        };
     }
 ]);
 

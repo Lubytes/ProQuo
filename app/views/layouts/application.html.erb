@@ -20,42 +20,86 @@
             <div><%= current_user.username %></div>
             <%= link_to "Log out", logout_path %>
 
+            <!-- Profile Settings Modal -->
+            <div ng-controller="modalPopup as ctrl" id="profileEdit" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span ng-click="ctrl.close('profileEdit')" class="close">×</span>
+                        <h2>Edit Profile</h2>
+                    </div>
+                    <div class="modal-body">
+                        <%= form_for :session, url: login_path  do |f| %>
+                        <!--username input-->
+                        <md-input-container class="md-icon-float md-block">
+                            <label>Username</label>
+                            <md-icon class="name">
+                                <span class="glyphicon glyphicon-user"></span>
+                            </md-icon>
+                            <input ng-model="user.name" type="text" ng-required="true" name="session[username]" value="test">
+                        </md-input-container>
+
+                        <!--password input-->
+                        <md-input-container class="md-block">
+                            <label>Password</label>
+                            <md-icon class="password">
+                                <span class="glyphicon glyphicon-lock"></span>
+                            </md-icon>
+                            <input ng-model="user.password" type="password" ng-required="true" name="session[password]">
+                        </md-input-container>
+
+                        <button type="submit" class="btn btn-success btn-block" name="commit">
+                            <span class="glyphicon glyphicon-send"></span>
+                            Submit Changes</button>
+                            <% end %>
+                    </div>
+                    <div class="modal-footer"></div>
+                </div>
+            </div>
+            <!--end modal content for profile settings-->
+
+
+
             <div class="header clearfix">
                 <nav>
                     <!--Navigation pills at the top right of the page-->
                     <ul class="nav nav-pills pull-right">
-                        <li role="presentation" class="active">
-                            <a href="#">Home</a>
-                        </li>
+                        <li role="presentation" class="active"><%= link_to "Home", root_path %></a>
+                    </li>
                         <li role="presentation">
-                            <a href="#">About</a>
+                            <a href="/about">About</a>
                         </li>
                         <li role="presentation">
                             <a href="#">Contact</a>
                         </li>
                         <li role="presentation">
                             <!--Account button-->
-                            <div class="md-menu-demo" ng-controller="LoginCtrl as ctrl" ng-cloak>
+                            <md-button aria-label="account button" class="md-icon-button">
+                                <a href="/users/<%= current_user.username %>"><span class="glyphicon glyphicon-user"></span></a>
+                            </md-button>
+                        </li>
+                        <li role="presentation">
+                            <!--Account button-->
+                            <div class="md-menu-demo" ng-controller="modalPopup as ctrl" ng-cloak>
 
                                 <md-menu>
                                     <a href="#">
                                         <!--href based on nav nav-pills-->
                                         <md-button aria-label="account button" class="md-icon-button" ng-click="ctrl.openMenu($mdOpenMenu, $event)">
-                                            <span class="glyphicon glyphicon-user"></span>
+                                            <span class="glyphicon glyphicon-cog"></span>
                                         </md-button>
                                     </a>
                                     <!--end of href-->
                                     <md-menu-content width="4">
                                         <md-menu-item>
-                                            <md-button ng-click="ctrl.login('loginModal')">
-                                                <span class="glyphicon glyphicon-tree-deciduous"></span>
-                                                Login
+                                            <md-button ng-click="ctrl.open('profileEdit')">
+                                                <span class="glyphicon glyphicon-pencil"></span>
+                                                Edit Profile
                                             </md-button>
                                         </md-menu-item>
                                         <md-menu-item>
-                                            <md-button ng-click="ctrl.signup('signUpModal')">
-                                                <span class="glyphicon glyphicon-grain"></span>
-                                                Sign Up
+                                            <md-button ng-click="">
+                                                <span class="glyphicon glyphicon-time"></span>
+                                                N/A...
                                             </md-button>
                                         </md-menu-item>
                                     </md-menu-content>
@@ -74,7 +118,7 @@
             <!-- Modal content -->
 
             <!--Modal implemented using http://www.w3schools.com/howto/howto_css_modals.asp-->
-            <div ng-controller="LoginCtrl as ctrl" id="loginModal" class="modal">
+            <div ng-controller="modalPopup as ctrl" id="loginModal" class="modal">
                 <div class="modal-content">
                     <div class="modal-header">
                         <span ng-click="ctrl.close('loginModal')" class="close">×</span>
@@ -118,7 +162,7 @@
             <!--end modal content for login-->
 
             <!--Sign up modal content-->
-            <div ng-controller="LoginCtrl as ctrl" id="signUpModal" class="modal">
+            <div ng-controller="modalPopup as ctrl" id="signUpModal" class="modal">
                 <div class="modal-content">
                     <div class="modal-header">
                         <span ng-click="ctrl.close('signUpModal')" class="close">×</span>
@@ -198,7 +242,7 @@
                     </li>
                     <li role="presentation">
                         <!--Account button-->
-                        <div class="md-menu-demo" ng-controller="LoginCtrl as ctrl" ng-cloak>
+                        <div class="md-menu-demo" ng-controller="modalPopup as ctrl" ng-cloak>
 
                             <md-menu>
                                 <a href="#">
@@ -210,13 +254,13 @@
                                 <!--end of href-->
                                 <md-menu-content width="4">
                                     <md-menu-item>
-                                        <md-button ng-click="ctrl.login('loginModal')">
+                                        <md-button ng-click="ctrl.open('loginModal')">
                                             <span class="glyphicon glyphicon-tree-deciduous"></span>
                                             Login
                                         </md-button>
                                     </md-menu-item>
                                     <md-menu-item>
-                                        <md-button ng-click="ctrl.signup('signUpModal')">
+                                        <md-button ng-click="ctrl.open('signUpModal')">
                                             <span class="glyphicon glyphicon-grain"></span>
                                             Sign Up
                                         </md-button>
