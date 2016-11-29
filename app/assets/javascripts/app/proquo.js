@@ -61,3 +61,18 @@ app.controller('aboutCtrl', ['$scope',
         }];
     }
 ]);
+
+app.controller('policyCtrl',['$scope',
+    function($scope){
+        $scope.policies=[{
+            name: 'one',
+            content: 'ONE'
+        },{
+            name: 'two',
+            content: 'TWO'
+        },{
+            name: 'three',
+            content: 'THREE'
+        }];
+    }
+]);

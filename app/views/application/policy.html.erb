@@ -1,0 +1,16 @@
+<div class="container">
+    <div ng-controller="policyCtrl" ng-app="proquo">
+        <h2>Privacy</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+            irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <div>
+            <ol>
+                <li ng-repeat="policy in policies">
+                    <h4 ng-click="showDetails = ! showDetails">{{policy.name}}</h4>
+                    <div class="policy_details" ng-show="showDetails">
+                        <p>{{policy.content}}</p>
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
