@@ -126,7 +126,7 @@
                     </div>
                     <div class="modal-body">
                         <% if hasErrors(:loginErrors) %>
-                        <p>I have errors</p>
+                        <script> document.getElementById("loginModal").style.display = "block"; </script>
                         <% end %>
                         <% getErrors(:loginErrors).each do |error_message| %>
                         <div class="alert alert-danger"><%= error_message %></div>
@@ -169,6 +169,8 @@
                         <h2>Registration</h2>
                     </div>
                     <div class="modal-body">
+                        <% if hasErrors(:registerErrors) %>
+                        <% end %>
                         <% getErrors(:registerError).each do |error_message| %>
                         <div class="alert alert-danger"><%= error_message %></div>
                         <% end %>
