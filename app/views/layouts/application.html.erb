@@ -170,6 +170,7 @@
                     </div>
                     <div class="modal-body">
                         <% if hasErrors(:registerErrors) %>
+                        <script> document.getElementById("signUpModal").style.display = "block"; </script>
                         <% end %>
                         <% getErrors(:registerError).each do |error_message| %>
                         <div class="alert alert-danger"><%= error_message %></div>
