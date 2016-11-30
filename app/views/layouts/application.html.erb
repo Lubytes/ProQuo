@@ -28,15 +28,7 @@
                         <h2>Edit Profile</h2>
                     </div>
                     <div class="modal-body">
-                        <%= form_for :session, url: login_path  do |f| %>
-                        <!--username input-->
-                        <md-input-container class="md-icon-float md-block">
-                            <label>Username</label>
-                            <md-icon class="name">
-                                <span class="glyphicon glyphicon-user"></span>
-                            </md-icon>
-                            <input ng-model="user.name" type="text" ng-required="true" name="session[username]" value="test">
-                        </md-input-container>
+                        <%= form_for current_user, url: current_user_profile, method: "post", class: "form-group"  do |f| %>
 
                         <!--password input-->
                         <md-input-container class="md-block">
@@ -44,7 +36,24 @@
                             <md-icon class="password">
                                 <span class="glyphicon glyphicon-lock"></span>
                             </md-icon>
-                            <input ng-model="user.password" type="password" ng-required="true" name="session[password]">
+                            <input ng-model="user.password" type="password" ng-required="true" name="password">
+                        </md-input-container>
+
+                        <!--confirm password input-->
+                        <md-input-container class="md-block">
+                          <label>Confirm Password</label>
+                          <md-icon class="password">
+                            <span class="glyphicon glyphicon-duplicate"></span>
+                          </md-icon>
+                          <input ng-model="user.password_confirm" type="password" ng-required="true" name="password_confirm">
+                        </md-input-container>
+
+                        <md-input-container class="md-block">
+                          <label>Avatar</label>
+                          <md-icon class="avatar">
+                            <span class="glyphicon glyphicon-picture"></span>
+                          </md-icon>
+                          <%= f.file_field :avatar %>
                         </md-input-container>
 
                         <button type="submit" class="btn btn-success btn-block" name="commit">
@@ -74,7 +83,7 @@
                         <li role="presentation">
                             <!--Account button-->
                             <md-button aria-label="account button" class="md-icon-button">
-                                <a href="/users/<%= current_user.username %>"><span class="glyphicon glyphicon-user"></span></a>
+                                <a href="<%= current_user_profile %>"><span class="glyphicon glyphicon-user"></span></a>
                             </md-button>
                         </li>
                         <li role="presentation">
