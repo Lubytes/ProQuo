@@ -1,10 +1,10 @@
 class UserController < ApplicationController
+    before_action :set_user, only: [:show, :update]
     include ApplicationHelper
 
     # User profile.
     # TODO get list of props owned by user ready.
     def show
-        @user = User.find_by_username(params[:username])
         if @user.nil?
             render 'no_user'
         end
@@ -31,7 +31,33 @@ class UserController < ApplicationController
             redirect_to :back
         end
     end
-  def user_params
-    params.permit(:username, :full_name, :email, :password, :password_confirmation, :description, :avatar)
-  end
+
+    def update
+        @user.assign_attributes user_update_params
+        if @user.save
+            redirect_to profile_path, username: @user.username, notice: 'Your user successfully updated.'
+        else
+            if @user.errors.full_messages.any?
+                @user.errors.full_messages.each do |error_message|
+                    addToErrors(:editError, error_message)
+                end
+            end
+            redirect_to profile_path, username: @user.username, notice: 'Something went wrong, your user was not updated.'
+        end
+    end
+
+    private
+
+    def set_user
+        @user = User.find_by_username(params[:username])
+    end
+
+    def user_params
+        params.permit(:username, :full_name, :email, :password, :password_confirmation, :description, :avatar)
+    end
+
+    def user_update_params
+        params.permit(:password, :password_confirmation)
+    end
+
 end
