@@ -33,7 +33,8 @@ class UserController < ApplicationController
     end
 
     def update
-        @user.assign_attributes user_update_params
+        @user.attributes = user_update_params
+        @user.avatar = params[:user][:avatar] # THIS IS A VERY BAD FIX.  TODO SOMETHING ELSE.
         if @user.save
             redirect_to profile_path, username: @user.username, notice: 'Your user successfully updated.'
         else
