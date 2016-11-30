@@ -7,7 +7,7 @@ module ApplicationHelper
   end
 
   def hasErrors(where)
-    return session[:errors].nil? ||  session[:errors][where.to_s].nil? || session[:errors][where.to_s].empty?
+    return session[:errors].nil? ||  session[:errors][where.to_s].nil? || !session[:errors][where.to_s].empty?
   end
 
   def getErrors(where)
