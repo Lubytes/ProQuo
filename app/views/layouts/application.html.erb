@@ -28,6 +28,13 @@
                         <h2>Edit Profile</h2>
                     </div>
                     <div class="modal-body">
+                      <% if hasErrors(:editError) %>
+                        <script> document.getElementById("profileEdit").style.display = "block"; </script>
+                      <% end %>
+                      <% getErrors(:editError).each do |error_message| %>
+                        <div class="alert alert-danger"><%= error_message %></div>
+                      <% end %>
+
                         <%= form_for current_user, url: current_user_profile, method: "post", class: "form-group"  do |f| %>
 
                         <!--password input-->
@@ -45,7 +52,7 @@
                           <md-icon class="password">
                             <span class="glyphicon glyphicon-duplicate"></span>
                           </md-icon>
-                          <input ng-model="user.password_confirm" type="password" ng-required="true" name="password_confirm">
+                          <input ng-model="user.password_confirmation" type="password" ng-required="true" name="password_confirmation">
                         </md-input-container>
 
                         <md-input-container class="md-block">
@@ -178,7 +185,7 @@
                         <h2>Registration</h2>
                     </div>
                     <div class="modal-body">
-                        <% if hasErrors(:registerErrors) %>
+                        <% if hasErrors(:registerError) %>
                         <script> document.getElementById("signUpModal").style.display = "block"; </script>
                         <% end %>
                         <% getErrors(:registerError).each do |error_message| %>
@@ -227,7 +234,7 @@
                             <md-icon class="password">
                                 <span class="glyphicon glyphicon-duplicate"></span>
                             </md-icon>
-                            <input ng-model="user.password_confirm" type="password" ng-required="true" name="password_confirm">
+                            <input ng-model="user.password_confirmation" type="password" ng-required="true" name="password_confirmation">
                         </md-input-container>
 
                         <button type="submit" class="btn btn-success btn-block" name="commit">
