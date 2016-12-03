@@ -9,6 +9,7 @@
 
         <!-- Bootstrap core CSS -->
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
 
     <body ng-app="proquo" ng-controller="MainCtrl">
@@ -295,12 +296,17 @@
         </div>
         <% end %>
         <% if notice %>
-        <p id="notice">I HAVE A NOTICE:<%= notice %></p>
+        <div ng-controller="AppCtrl">
+        <md-button ng-click="showSimpleToast('<%= notice %>')">
+            Show Toast
+        </md-button>
+        </div>
         <% end %>
         <%= yield %>
 
         <!--Footer content-->
         <footer>
+
             <hr>
             <p>&copy; 2016 ProQuo, Inc.</p>
         </footer>
