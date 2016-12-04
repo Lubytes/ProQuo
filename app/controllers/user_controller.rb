@@ -8,6 +8,7 @@ class UserController < ApplicationController
         if @user.nil?
             render 'no_user'
         end
+        @userResults = Prop.where(user_id: @user)
     end
 
     # Register page
