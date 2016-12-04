@@ -11,231 +11,36 @@
 
 <div class='md-padding' layout="row" layout-wrap>
 
-        <md-card>
-          <md-card-header>
-            <md-card-avatar>
-              <img class="md-user-avatar" src="img/100-2.jpeg">
-            </md-card-avatar>
-            <md-card-header-text>
-              <span class="md-title">Username</span>
-              <span class="md-subhead">full name</span>
-            </md-card-header-text>
-          </md-card-header>
-          <img ng-src="{{imagePath}}" class="md-card-image" alt="item name">
-          <md-card-title>
-            <md-card-title-text>
-              <span class="md-headline">Item name</span>
-              <span class="md-subhead">tags</span>
-            </md-card-title-text>
-          </md-card-title>
-          <md-card-actions layout="row" layout-align="start center">
-            <md-button>Action 1</md-button>
-            <md-button>Action 2</md-button>
-          </md-card-actions>
-          <md-card-content>
-            <p>
-              item description
-            </p>
-          </md-card-content>
-        </md-card>
+  <% @searchResults.each do |prop| %>
+    <md-card>
+      <% u = prop.user %>
+      <md-card-header>
+        <md-card-avatar>
+          <img class="md-user-avatar" style="width:40px;height:40px;" src="<%= u.avatar.url(:thumb) %>">
+        </md-card-avatar>
+        <md-card-header-text>
+          <span class="md-title"><%= u.username %></span>
+          <span class="md-subhead"><%= u.full_name %></span>
+        </md-card-header-text>
+      </md-card-header>
+      <img ng-src="<%= prop.image.url(:medium) %>" style="width: 200px;" class="md-card-image" alt="<%= prop.name %>">
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-headline"><%= prop.name %></span>
+          <span class="md-subhead">tags</span>
+        </md-card-title-text>
+      </md-card-title>
+      <md-card-actions layout="row" layout-align="start center">
+        <md-button>Action 1</md-button>
+        <md-button>Action 2</md-button>
+      </md-card-actions>
+      <md-card-content>
+        <p style="width: 168px;">
+          <%= prop.description %>
+        </p>
+      </md-card-content>
+    </md-card>
+  <% end %>
 
-        <md-card>
-          <md-card-header>
-            <md-card-avatar>
-              <img class="md-user-avatar" src="img/100-2.jpeg">
-            </md-card-avatar>
-            <md-card-header-text>
-              <span class="md-title">Username</span>
-              <span class="md-subhead">full name</span>
-            </md-card-header-text>
-          </md-card-header>
-          <img ng-src="{{imagePath}}" class="md-card-image" alt="item name">
-          <md-card-title>
-            <md-card-title-text>
-              <span class="md-headline">Item name</span>
-              <span class="md-subhead">tags</span>
-            </md-card-title-text>
-          </md-card-title>
-          <md-card-actions layout="row" layout-align="start center">
-            <md-button>Action 1</md-button>
-            <md-button>Action 2</md-button>
-          </md-card-actions>
-          <md-card-content>
-            <p>
-              item description
-            </p>
-          </md-card-content>
-        </md-card>
-        <md-card>
-          <md-card-header>
-            <md-card-avatar>
-              <img class="md-user-avatar" src="img/100-2.jpeg">
-            </md-card-avatar>
-            <md-card-header-text>
-              <span class="md-title">Username</span>
-              <span class="md-subhead">full name</span>
-            </md-card-header-text>
-          </md-card-header>
-          <img ng-src="{{imagePath}}" class="md-card-image" alt="item name">
-          <md-card-title>
-            <md-card-title-text>
-              <span class="md-headline">Item name</span>
-              <span class="md-subhead">tags</span>
-            </md-card-title-text>
-          </md-card-title>
-          <md-card-actions layout="row" layout-align="start center">
-            <md-button>Action 1</md-button>
-            <md-button>Action 2</md-button>
-          </md-card-actions>
-          <md-card-content>
-            <p>
-              item description
-            </p>
-          </md-card-content>
-        </md-card>
-        <md-card>
-          <md-card-header>
-            <md-card-avatar>
-              <img class="md-user-avatar" src="img/100-2.jpeg">
-            </md-card-avatar>
-            <md-card-header-text>
-              <span class="md-title">Username</span>
-              <span class="md-subhead">full name</span>
-            </md-card-header-text>
-          </md-card-header>
-          <img ng-src="{{imagePath}}" class="md-card-image" alt="item name">
-          <md-card-title>
-            <md-card-title-text>
-              <span class="md-headline">Item name</span>
-              <span class="md-subhead">tags</span>
-            </md-card-title-text>
-          </md-card-title>
-          <md-card-actions layout="row" layout-align="start center">
-            <md-button>Action 1</md-button>
-            <md-button>Action 2</md-button>
-          </md-card-actions>
-          <md-card-content>
-            <p>
-              item description
-            </p>
-          </md-card-content>
-        </md-card>
-
-        <md-card>
-          <md-card-header>
-            <md-card-avatar>
-              <img class="md-user-avatar" src="img/100-2.jpeg">
-            </md-card-avatar>
-            <md-card-header-text>
-              <span class="md-title">Username</span>
-              <span class="md-subhead">full name</span>
-            </md-card-header-text>
-          </md-card-header>
-          <img ng-src="{{imagePath}}" class="md-card-image" alt="item name">
-          <md-card-title>
-            <md-card-title-text>
-              <span class="md-headline">Item name</span>
-              <span class="md-subhead">tags</span>
-            </md-card-title-text>
-          </md-card-title>
-          <md-card-actions layout="row" layout-align="start center">
-            <md-button>Action 1</md-button>
-            <md-button>Action 2</md-button>
-          </md-card-actions>
-          <md-card-content>
-            <p>
-              item description
-            </p>
-          </md-card-content>
-        </md-card>
-
-        <md-card>
-          <md-card-header>
-            <md-card-avatar>
-              <img class="md-user-avatar" src="img/100-2.jpeg">
-            </md-card-avatar>
-            <md-card-header-text>
-              <span class="md-title">Username</span>
-              <span class="md-subhead">full name</span>
-            </md-card-header-text>
-          </md-card-header>
-          <img ng-src="{{imagePath}}" class="md-card-image" alt="item name">
-          <md-card-title>
-            <md-card-title-text>
-              <span class="md-headline">Item name</span>
-              <span class="md-subhead">tags</span>
-            </md-card-title-text>
-          </md-card-title>
-          <md-card-actions layout="row" layout-align="start center">
-            <md-button>Action 1</md-button>
-            <md-button>Action 2</md-button>
-          </md-card-actions>
-          <md-card-content>
-            <p>
-              item description
-            </p>
-          </md-card-content>
-        </md-card>
-
-        <md-card>
-          <md-card-header>
-            <md-card-avatar>
-              <img class="md-user-avatar" src="img/100-2.jpeg">
-            </md-card-avatar>
-            <md-card-header-text>
-              <span class="md-title">Username</span>
-              <span class="md-subhead">full name</span>
-            </md-card-header-text>
-          </md-card-header>
-          <img ng-src="{{imagePath}}" class="md-card-image" alt="item name">
-          <md-card-title>
-            <md-card-title-text>
-              <span class="md-headline">Item name</span>
-              <span class="md-subhead">tags</span>
-            </md-card-title-text>
-          </md-card-title>
-          <md-card-actions layout="row" layout-align="start center">
-            <md-button>Action 1</md-button>
-            <md-button>Action 2</md-button>
-          </md-card-actions>
-          <md-card-content>
-            <p>
-              item description
-            </p>
-          </md-card-content>
-        </md-card>
-
-        <md-card>
-          <md-card-header>
-            <md-card-avatar>
-              <img class="md-user-avatar" src="img/100-2.jpeg">
-            </md-card-avatar>
-            <md-card-header-text>
-              <span class="md-title">Username</span>
-              <span class="md-subhead">full name</span>
-            </md-card-header-text>
-          </md-card-header>
-          <img ng-src="{{imagePath}}" class="md-card-image" alt="item name">
-          <md-card-title>
-            <md-card-title-text>
-              <span class="md-headline">Item name</span>
-              <span class="md-subhead">tags</span>
-            </md-card-title-text>
-          </md-card-title>
-          <md-card-actions layout="row" layout-align="start center">
-            <md-button>Action 1</md-button>
-            <md-button>Action 2</md-button>
-          </md-card-actions>
-          <md-card-content>
-            <p>
-              item description
-            </p>
-          </md-card-content>
-        </md-card>
-
-</div>
-
-
-
-
+  </div>
 </div>

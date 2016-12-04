@@ -5,6 +5,6 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
 
   def index
-      @user = User.new
+      @searchResults = Prop.all
   end
 end
