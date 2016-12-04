@@ -1,10 +1,12 @@
 <!--Search bar at the top of the page-->
+<form method="get" action=".">
 <div class="input-group input-group-lg" id="search-bar">
     <span class="input-group-addon" id="sizing-addon1">
         <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
     </span>
-    <input type="text" class="form-control" placeholder="What are you looking for?" aria-describedby="sizing-addon1">
+      <input type="text" class="form-control" placeholder="What are you looking for?" aria-describedby="sizing-addon1" name="search" value="<%= params[:search] %>">
 </div>
+</form>
 
 <!--In the future we may use cards instead https://material.angularjs.org/latest/demo/card-->
 <div ng-controller="MainCtrl as mainCtrl" ng-cloak="" class="gridListdemoBasicUsage" ng-app="proquo">

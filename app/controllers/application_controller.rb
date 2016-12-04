@@ -5,6 +5,10 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
 
   def index
-      @searchResults = Prop.all
+      if params[:search].nil?
+        @searchResults = Prop.all()
+      else
+        @searchResults = Prop.joins(:user).where('name LIKE ? OR props.description LIKE ? OR username LIKE ? OR full_name LIKE ?', "%#{params[:search]}%", "%#{params[:search]}%", "%#{params[:search]}%","%#{params[:search]}%")
+      end
   end
 end
