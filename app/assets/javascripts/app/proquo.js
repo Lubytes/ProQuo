@@ -53,7 +53,7 @@ app.controller('aboutCtrl', ['$scope',
         }, {
             name: 'Ivana Kutesa',
             pic: 'http://placehold.it/200x200',
-            todo: 'What does this team member to? Keep it short! This is also a great spot for social links!'
+            todo: 'Sloths are love, sloths are life.'
         }, {
             name: 'Salman Malik',
             pic: 'http://placehold.it/200x200',
