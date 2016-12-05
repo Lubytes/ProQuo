@@ -8,6 +8,7 @@ class UserController < ApplicationController
         if @user.nil?
             render 'no_user'
         end
+        @userResults = Prop.where(user_id: @user)
     end
 
     # Register page
@@ -34,7 +35,7 @@ class UserController < ApplicationController
 
     def update
         @user.attributes = user_update_params
-        @user.avatar = params[:user][:avatar] # THIS IS A VERY BAD FIX.  TODO SOMETHING ELSE.
+        @user.avatar = params.fetch(:user, {}).fetch(:avatar, @user.avatar)# THIS IS A VERY BAD FIX.  TODO SOMETHING ELSE.
         if @user.save
             redirect_to profile_path, username: @user.username, notice: 'Your user successfully updated.'
         else

@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :props, dependent: :destroy
 
   validates_presence_of :username, presence: true
+  validates_presence_of :password_confirmation, presence: true
   validates_presence_of :password_hash, presence: true
   validates_presence_of :email, presence: true
   validates_presence_of :full_name, presence: true
